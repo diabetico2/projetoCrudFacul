@@ -1,8 +1,8 @@
-export class Produto {
+export class user {
     id: number;
+    email: string;
     name: string;
-    tipo: string;
-    preco: string;
+    password: string;
     createdAt: Date;
     updatedAt: Date;
 }

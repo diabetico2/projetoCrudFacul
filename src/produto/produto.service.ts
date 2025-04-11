@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateProdutoDto } from './dto/create-produto.dto';
 import { PatchProdutoDto } from './dto/update-produto.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -16,19 +16,42 @@ export class ProdutoService {
     });
   }
 
-  findAll() {
-    return `This action returns all produto`;
+  async read() {
+    return await this.prisma.produto.findMany()
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} produto`;
+async readOne(id: number) {
+    return await this.prisma.produto.findUnique({
+      where: {
+        id,
+      },
+    });
   }
 
-  update(id: number, updateProdutoDto: PatchProdutoDto) {
-    return `This action updates a #${id} produto`;
+  async update(id: number, { name, tipo, preco }: PatchProdutoDto) {
+   await this.exists(id);
+    return await this.prisma.produto.update({
+      where: {
+        id,
+      },
+      data: {
+        name,
+        tipo,
+        preco,
+      },
+    });
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} produto`;
+  async exists(id: number) {
+    if(!(await this.readOne(id))) {
+      throw new NotFoundException('User not found');
+    }
+  }
+async delete (id: number) {
+    await this.exists(id);
+   return this.prisma.produto.delete({
+      where: {
+        id,
+      },
+    });
   }
 }

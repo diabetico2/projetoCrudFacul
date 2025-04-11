@@ -1,6 +1,10 @@
+import {IsAlpha, Matches , IsString} from 'class-validator';
 export class CreateProdutoDto {
+  @IsString()
+  name: string;
+  @IsAlpha()
+  tipo: string;
 
-  name;
-  tipo;
-  preco;
+  @Matches(/^[0-9.,:\$]+$/)
+  preco: string;
 }

@@ -17,17 +17,17 @@ export class PetController {
 
   @Post()
   async create(@Body() { DonoNome, NomePet, raca }: CreatePetDto) {
-    return this.petService.create ({ DonoNome, NomePet, raca });
+    return this.petService.create({ DonoNome, NomePet, raca });
   }
 
   @Get()
   findAll() {
-    return this.petService.findAll();
+    return this.petService.read();
   }
 
   @Get(':id')
   async findOne(@Param('id', ParseIntPipe) id: number) {
-    return { id };
+    return this.petService.readOne(id);
   }
 
   @Patch(':id')
@@ -35,8 +35,10 @@ export class PetController {
     @Param('id', ParseIntPipe) id: number,
     @Body() { DonoNome, NomePet, raca },
   ) {
-    return { id, DonoNome, NomePet, raca };
+    return this.petService.update(id, { DonoNome, NomePet, raca });
   }
-  @Delete('id')
-  async delete(@Param('id', ParseIntPipe) id: number) {}
+  @Delete(':id')
+  async delete(@Param('id', ParseIntPipe) id: number) {
+    return this.petService.delete(id);
+  }
 }

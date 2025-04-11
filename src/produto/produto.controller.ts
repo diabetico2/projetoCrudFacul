@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { ProdutoService } from './produto.service';
 import { CreateProdutoDto } from './dto/create-produto.dto';
+import { PatchProdutoDto } from './dto/update-produto.dto';
 
 
 @Controller('produto')
@@ -23,23 +24,23 @@ export class ProdutoController {
 
   @Get()
   async read() {
-    return [];
+    return this.produtoService.read();
   }
   @Get(':id')
   async readOne(@Param('id', ParseIntPipe) id: number) {
-    return { id };
+    return this.produtoService.readOne(id);
   }
 
   @Patch(':id')
   async update(
     @Param('id', ParseIntPipe) id: number,
-    @Body() { name, tipo, preco },
+    @Body() { name, tipo, preco }: PatchProdutoDto,
   ) {
-    return { id, name, tipo, preco };
+    return this.produtoService.update(id, {name, tipo, preco }); ;
   }
 
   @Delete(':id')
 async delete(@Param('id', ParseIntPipe) id: number) {
-    return { id };
+    return this.produtoService.delete(id);
   }
 }
