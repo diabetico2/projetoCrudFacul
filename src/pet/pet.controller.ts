@@ -33,7 +33,7 @@ export class PetController {
   @Patch(':id')
   async update(
     @Param('id', ParseIntPipe) id: number,
-    @Body() { DonoNome, NomePet, raca },
+    @Body() { DonoNome, NomePet, raca }: CreatePetDto,
   ) {
     return this.petService.update(id, { DonoNome, NomePet, raca });
   }

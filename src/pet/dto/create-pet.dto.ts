@@ -1,5 +1,10 @@
+import { IsAlpha } from "class-validator";
+
 export class CreatePetDto {
-  DonoNome;
-  NomePet;
-  raca;
+  @IsAlpha()
+  DonoNome: string;
+  @IsAlpha()
+  NomePet: string;
+  @IsAlpha()
+  raca: string;
 }

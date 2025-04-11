@@ -28,7 +28,7 @@ export class PetService {
     });
   }
 
-  async update(id: number, { DonoNome, NomePet, raca }) {
+  async update(id: number, { DonoNome, NomePet, raca }: UpdatePetDto) {
    await this.exists(id);
     return await this.prisma.pet.update({
       where: {
