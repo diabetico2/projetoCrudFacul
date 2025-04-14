@@ -1,8 +1,12 @@
 import {IsAlpha, Matches , IsString} from 'class-validator';
 export class CreateProdutoDto {
-  @IsString()
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
   name: string;
-  @IsAlpha()
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
   tipo: string;
 
   @Matches(/^[0-9.,:\$]+$/)

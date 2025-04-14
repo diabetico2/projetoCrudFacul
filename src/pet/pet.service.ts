@@ -29,7 +29,7 @@ export class PetService {
   }
 
   async update(id: number, { DonoNome, NomePet, raca }: UpdatePetDto) {
-   await this.exists(id);
+    await this.exists(id);
     return await this.prisma.pet.update({
       where: {
         id,
@@ -46,12 +46,13 @@ export class PetService {
       throw new NotFoundException('User not found');
     }
   }
-async delete(id: number) {
+  async delete(id: number) {
     await this.exists(id);
-   return this.prisma.pet.delete({
+    await this.prisma.pet.delete({
       where: {
         id,
       },
     });
+    return { message: 'Pet deletado com sucesso' };
   }
 }

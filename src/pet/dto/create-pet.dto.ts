@@ -1,10 +1,16 @@
-import { IsAlpha } from "class-validator";
+import { Matches } from 'class-validator';
 
 export class CreatePetDto {
-  @IsAlpha()
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
   DonoNome: string;
-  @IsAlpha()
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
   NomePet: string;
-  @IsAlpha()
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
   raca: string;
 }

@@ -29,7 +29,6 @@ export class UserService {
 
   async update(id: number, { email, name, password }:PatchUserDto ) {
     await this.exists(id);
-
     return await this.prisma.user.update({
       where: {
         id,
@@ -49,10 +48,11 @@ export class UserService {
   async delete (id: number) {
 
     await this.exists(id);
-   return this.prisma.user.delete({
+   await this.prisma.user.delete({
       where: {
         id,
       },
     });
+    return { message: 'User deletado com sucesso' };
   }
 }

@@ -48,10 +48,11 @@ async readOne(id: number) {
   }
 async delete (id: number) {
     await this.exists(id);
-   return this.prisma.produto.delete({
+   await this.prisma.produto.delete({
       where: {
         id,
       },
     });
+    return { message: 'Produto deletado com sucesso' };
   }
 }

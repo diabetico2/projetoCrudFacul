@@ -1,12 +1,18 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreatePetDto } from './create-pet.dto';
-import { IsAlpha } from 'class-validator';
+import { Matches } from 'class-validator';
 
 export class UpdatePetDto extends PartialType(CreatePetDto) {
-      @IsAlpha()
-      DonoNome: string;
-      @IsAlpha()
-      NomePet: string;
-      @IsAlpha()
-      raca: string;
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
+  DonoNome: string;
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
+  NomePet: string;
+  @Matches(/^[\p{L}\s]+$/u, {
+    message: 'por favor, insira apenas letras e espaços',
+  })
+  raca: string;
 }

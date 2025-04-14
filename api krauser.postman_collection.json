@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "1e8e5cd2-14aa-4a2a-81a8-7a6f32e207ab",
+		"name": "api krauser",
+		"description": "---\n\n## Instruções de Instalação\n\n1. git clone [https://github.com/diabetico2/projetoCrudFacul.git<br>](https://github.com/diabetico2/projetoCrudFacul)1.2 cd projetoCrudFacul\n    \n2. npm install\n    \n3. **Configure as variáveis de ambiente:**\n    \n    - cp .env.example .env\n        \n    - DATABASE_URL=\"mysql://root:99219830@localhost:3306/api_\"PORT=3000\n        \n4. **Prepare o banco de dados:**\n    \n    - Certifique-se de que o MySQL está rodando e que o banco de dados (no exemplo, `api_`) foi criado.  \n        Se necessário, crie o banco de dados usando o MySQL Workbench ou pela linha de comando.\n        \n    - npx prisma migrate deploy\n        \n5. npm run start:dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40712893"
+	},
+	"item": [
+		{
+			"name": "Get User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				},
+				"description": "Este endpoint é utilizado para obter a lista de user. Por padrão, ele retorna todos os usuarios cadastrados. No entanto, caso queira buscar um produto específico, basta adicionar uma barra seguida do ID desejado ao final da URL.\n\n<img src=\"https://content.pstmn.io/1a55181d-5c5a-42ea-8dee-6121ea550d8e/aW1hZ2UucG5n\" width=\"1920\" height=\"1020\">\n\n<img src=\"https://content.pstmn.io/cabfb804-e25f-4e1c-9341-78c8ec705b94/aW1hZ2UucG5n\" alt=\"\" height=\"356\" width=\"1395\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet"
+					]
+				},
+				"description": "Este endpoint é utilizado para obter a lista de pet. Por padrão, ele retorna todos os pet cadastrados. No entanto, caso queira buscar um produto específico, basta adicionar uma barra seguida do ID desejado ao final da URL.\n\n<img src=\"https://content.pstmn.io/a84f5287-08ff-473f-992c-e9e3fcd422ba/aW1hZ2UucG5n\" width=\"1433\" height=\"700\">\n\n<img src=\"https://content.pstmn.io/57eae231-7d72-4c12-a955-9336163a9393/aW1hZ2UucG5n\" alt=\"\" height=\"549\" width=\"1423\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Get produto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produto"
+					]
+				},
+				"description": "Este endpoint é utilizado para obter a lista de produto. Por padrão, ele retorna todos os produtos cadastrados. No entanto, caso queira buscar um produto específico, basta adicionar uma barra seguida do ID desejado ao final da URL.\n\n<img src=\"https://content.pstmn.io/291f3745-c728-40d3-8477-875ebfc220e5/aW1hZ2UucG5n\" width=\"1920\" height=\"1020\">\n\n<img src=\"https://content.pstmn.io/28fe594c-6a02-402b-9f82-11e159710779/aW1hZ2UucG5n\" alt=\"\" height=\"593\" width=\"1436\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Post User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"UsuarioCriado\",\n    \"email\": \"usuario@gmail.com\",\n    \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				},
+				"description": "Este endpoint é para a criação de novos usuarios, ele possui uma especie de regra, onde caso o email do usuario não seja email, o sistema vai rejeitar\n\n<img src=\"https://content.pstmn.io/02058802-ecdf-4ab5-8ce3-9792f529cad3/aW1hZ2UucG5n\" width=\"1920\" height=\"1020\">\n\n<img src=\"https://content.pstmn.io/30e3c915-84ef-407a-a8c2-e56e01b9504b/aW1hZ2UucG5n\" width=\"1920\" height=\"1020\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Post pet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"DonoNome\": \"Clark\",\n    \"NomePet\": \"krypto\",\n    \"raca\": \"cachorro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pet",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet"
+					]
+				},
+				"description": "Este endpoint é para a criação de novos usuarios e seus pets, ele possui uma especie de regra, onde caso o email do usuario não seja email, o sistema vai rejeitar\n\n<img src=\"https://content.pstmn.io/c54e7025-40d2-4099-95ae-d5977d45feef/aW1hZ2UucG5n\" width=\"1920\" height=\"1020\">\n\n<img src=\"https://content.pstmn.io/d9ddda68-d383-4b44-934d-ce03117c1be3/aW1hZ2UucG5n\" alt=\"\" height=\"1020\" width=\"1920\">"
+			},
+			"response": []
+		},
+		{
+			"name": "post produto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Arroz sao jorge\",\n    \"tipo\": \"arroz\",\n    \"preco\": \"12.86\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produto"
+					]
+				},
+				"description": "Este endpoint é para a criação de novos produtos, ele possui uma especie de regra, onde caso o o tipo do produto tenha numero e/ou o preço dele tenha letra, o sistema vai rejeitar\n\n<img src=\"https://content.pstmn.io/a87284ef-5fff-4889-b51d-8fc5c9cbc451/aW1hZ2UucG5n\" width=\"1920\" height=\"1020\">\n\n<img src=\"https://content.pstmn.io/a4a8a9df-8d8a-4e7b-9171-2d3f9518c284/aW1hZ2UucG5n\" alt=\"\" height=\"1020\" width=\"1920\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch User",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"name\": \"alterado\",\r\n        \"email\": \"alterado@gmail.com\",\r\n        \"password\": \"56313\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"6"
+					]
+				},
+				"description": "Esse endpoint é utilizado para atualizar os dados do usuario, como nome, email e a senha, as regras de criação se mantem nesse endpoint também\n\nantes/depois do usuario ter sido alterado\n\n<img src=\"https://content.pstmn.io/197b18b2-696c-4cf4-a63e-6a5dceceb16f/aW1hZ2UucG5n\" width=\"1442\" height=\"567\">\n\n<img src=\"https://content.pstmn.io/363af0eb-8031-4d3b-a066-f01d12ac3547/aW1hZ2UucG5n\" width=\"1422\" height=\"556\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch pet",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DonoNome\": \"João\",\r\n    \"NomePet\": \"gigante\",\r\n    \"raca\": \"gold Retriver\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pet/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet",
+						"3"
+					]
+				},
+				"description": "Esse endpoint é utilizado para atualizar os dados do pet, como nome do dono, o nome do pet e a raça, as regras de criação se mantem nesse endpoint também\n\nantes/depois do pet ter sido alterado\n\n<img src=\"https://content.pstmn.io/d8bc4f73-08db-4918-b47b-7b7d304a56f2/aW1hZ2UucG5n\" width=\"1423\" height=\"561\">\n\n<img src=\"https://content.pstmn.io/f1d01e3a-b71b-48eb-8379-8aaf5a7c2643/aW1hZ2UucG5n\" alt=\"\" height=\"571\" width=\"1444\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch produto",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"feijão são jorge\",\r\n    \"tipo\": \"feijão\",\r\n    \"preco\": \"9.21\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/produto/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produto",
+						"8"
+					]
+				},
+				"description": "Esse endpoint é utilizado para atualizar os dados do produto, como nome do produto, o tipo do produto e o preço, as regras de criação se mantem nesse endpoint também\n\nantes/depois do produto ter sido alterado\n\n<img src=\"https://content.pstmn.io/6d55462b-a717-4ac7-86a9-4e52ded74d95/aW1hZ2UucG5n\" width=\"1437\" height=\"570\">\n\n<img src=\"https://content.pstmn.io/845e3b4c-8f23-40e2-89a6-40fddc52937c/aW1hZ2UucG5n\" alt=\"\" height=\"648\" width=\"1430\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"6"
+					]
+				},
+				"description": "Esse endpoint deleta o usuario selecionado via ID\n\n<img src=\"https://content.pstmn.io/031f182a-a163-4b8d-8bd2-6b2b37888591/aW1hZ2UucG5n\" alt=\"\" height=\"1020\" width=\"1920\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete pet",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pet/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pet",
+						"5"
+					]
+				},
+				"description": "Esse endpoint deleta o pet selecionado via ID\n\n<img src=\"https://content.pstmn.io/20756be9-19f6-41bf-b133-9afa61dd3eb6/aW1hZ2UucG5n\" width=\"1920\" height=\"1020\">"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete produto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/produto/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produto",
+						"5"
+					]
+				},
+				"description": "<img src=\"https://content.pstmn.io/050c7f42-aa10-4a71-9f68-c79f17980026/aW1hZ2UucG5n\" alt=\"Esse%20endpoint%20deleta%20o%20produto%20selecionado%20via%20ID\" width=\"1920\" height=\"1020\">"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
