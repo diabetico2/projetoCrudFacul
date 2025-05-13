@@ -1,58 +1,58 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CreatePetDto } from './dto/create-pet.dto';
-import { UpdatePetDto } from './dto/update-pet.dto';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
+import { Pet } from 'generated/prisma';
 
 @Injectable()
 export class PetService {
-  constructor(private readonly prisma: PrismaService) {}
-  async create({ DonoNome, NomePet, raca }: CreatePetDto) {
-    return await this.prisma.pet.create({
-      data: {
-        DonoNome,
-        NomePet,
-        raca,
-      },
-    });
-  }
+    constructor(private readonly prisma: PrismaService) {}
 
-  async read() {
-    return await this.prisma.pet.findMany();
-  }
-
-  async readOne(id: number) {
-    return await this.prisma.pet.findUnique({
-      where: {
-        id,
-      },
-    });
-  }
-
-  async update(id: number, { DonoNome, NomePet, raca }: UpdatePetDto) {
-    await this.exists(id);
-    return await this.prisma.pet.update({
-      where: {
-        id,
-      },
-      data: {
-        DonoNome,
-        NomePet,
-        raca,
-      },
-    });
-  }
-  async exists(id: number) {
-    if (!(await this.readOne(id))) {
-      throw new NotFoundException('User not found');
+    async listarPets(): Promise<Pet[]> {
+        return this.prisma.pet.findMany();
     }
-  }
-  async delete(id: number) {
-    await this.exists(id);
-    await this.prisma.pet.delete({
-      where: {
-        id,
-      },
-    });
-    return { message: 'Pet deletado com sucesso' };
-  }
+
+    async encontrarPet(id: number): Promise<Pet> {
+        const pet = await this.prisma.pet.findUnique({
+            where: { id }
+        });
+        if (!pet) {
+            throw new NotFoundException('Pet não encontrado');
+        }
+        return pet;
+    }
+
+    async encontrarProdutosPet(id: number) {
+        return this.prisma.pet.findUnique({
+            where: { id },
+            include: { produtos: true }
+        });
+    }
+
+    async criarPet(dados: { nome: string; raca: string; usuarioId: number }): Promise<Pet> {
+        return this.prisma.pet.create({
+            data: dados
+        });
+    }
+
+    async atualizarPet(id: number, dados: { nome?: string; raca?: string }): Promise<Pet> {
+        await this.verificarExistencia(id);
+        return this.prisma.pet.update({
+            where: { id },
+            data: dados
+        });
+    }
+
+    async excluirPet(id: number) {
+        await this.verificarExistencia(id);
+        await this.prisma.pet.delete({
+            where: { id }
+        });
+        return { message: 'Pet deletado com sucesso' };
+    }
+
+    private async verificarExistencia(id: number) {
+        const pet = await this.encontrarPet(id);
+        if (!pet) {
+            throw new NotFoundException('Pet não encontrado');
+        }
+    }
 }

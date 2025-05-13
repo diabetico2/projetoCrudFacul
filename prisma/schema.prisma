@@ -8,23 +8,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model pet {
+model Usuario {
   id       Int    @id @default(autoincrement())
-  DonoNome String @db.VarChar(255)
-  NomePet  String @db.VarChar(255)
-  raca     String @db.VarChar(255)
+  nome     String @db.VarChar(255)
+  email    String @unique @db.VarChar(255)
+  senha    String @db.VarChar(255)
+  pets     Pet[]
 }
 
-model produto {
-  id    Int    @id @default(autoincrement())
-  name  String @db.VarChar(255)
-  tipo  String @db.VarChar(255)
-  preco String @db.VarChar(255)
+model Pet {
+  id         Int      @id @default(autoincrement())
+  nome       String   @db.VarChar(255)
+  raca       String   @db.VarChar(255)
+  usuarioRel Usuario  @relation(fields: [usuarioId], references: [id])
+  usuarioId  Int
+  produtos   Produto[]
 }
 
-model user {
-  id       Int    @id @default(autoincrement())
-  name     String @db.VarChar(255)
-  email    String @db.VarChar(255)
-  password String @db.VarChar(255)
+model Produto {
+  id          Int    @id @default(autoincrement())
+  nome        String @db.VarChar(255)
+  tipo        String @db.VarChar(255)
+  preco       Float
+  petRel      Pet    @relation(fields: [petId], references: [id])
+  petId       Int
 }

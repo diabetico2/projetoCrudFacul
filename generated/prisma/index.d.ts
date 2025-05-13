@@ -14,20 +14,20 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model pet
+ * Model Usuario
  * 
  */
-export type pet = $Result.DefaultSelection<Prisma.$petPayload>
+export type Usuario = $Result.DefaultSelection<Prisma.$UsuarioPayload>
 /**
- * Model produto
+ * Model Pet
  * 
  */
-export type produto = $Result.DefaultSelection<Prisma.$produtoPayload>
+export type Pet = $Result.DefaultSelection<Prisma.$PetPayload>
 /**
- * Model user
+ * Model Produto
  * 
  */
-export type user = $Result.DefaultSelection<Prisma.$userPayload>
+export type Produto = $Result.DefaultSelection<Prisma.$ProdutoPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -36,8 +36,8 @@ export type user = $Result.DefaultSelection<Prisma.$userPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more Pets
- * const pets = await prisma.pet.findMany()
+ * // Fetch zero or more Usuarios
+ * const usuarios = await prisma.usuario.findMany()
  * ```
  *
  *
@@ -57,8 +57,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more Pets
-   * const pets = await prisma.pet.findMany()
+   * // Fetch zero or more Usuarios
+   * const usuarios = await prisma.usuario.findMany()
    * ```
    *
    *
@@ -155,34 +155,34 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.pet`: Exposes CRUD operations for the **pet** model.
+   * `prisma.usuario`: Exposes CRUD operations for the **Usuario** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Usuarios
+    * const usuarios = await prisma.usuario.findMany()
+    * ```
+    */
+  get usuario(): Prisma.UsuarioDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.pet`: Exposes CRUD operations for the **Pet** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Pets
     * const pets = await prisma.pet.findMany()
     * ```
     */
-  get pet(): Prisma.petDelegate<ExtArgs, ClientOptions>;
+  get pet(): Prisma.PetDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.produto`: Exposes CRUD operations for the **produto** model.
+   * `prisma.produto`: Exposes CRUD operations for the **Produto** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Produtos
     * const produtos = await prisma.produto.findMany()
     * ```
     */
-  get produto(): Prisma.produtoDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.user`: Exposes CRUD operations for the **user** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more Users
-    * const users = await prisma.user.findMany()
-    * ```
-    */
-  get user(): Prisma.userDelegate<ExtArgs, ClientOptions>;
+  get produto(): Prisma.ProdutoDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -623,9 +623,9 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    pet: 'pet',
-    produto: 'produto',
-    user: 'user'
+    Usuario: 'Usuario',
+    Pet: 'Pet',
+    Produto: 'Produto'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -644,205 +644,205 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "pet" | "produto" | "user"
+      modelProps: "usuario" | "pet" | "produto"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      pet: {
-        payload: Prisma.$petPayload<ExtArgs>
-        fields: Prisma.petFieldRefs
+      Usuario: {
+        payload: Prisma.$UsuarioPayload<ExtArgs>
+        fields: Prisma.UsuarioFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.petFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload> | null
+            args: Prisma.UsuarioFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.petFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload>
+            args: Prisma.UsuarioFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
           }
           findFirst: {
-            args: Prisma.petFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload> | null
+            args: Prisma.UsuarioFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.petFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload>
+            args: Prisma.UsuarioFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
           }
           findMany: {
-            args: Prisma.petFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload>[]
+            args: Prisma.UsuarioFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>[]
           }
           create: {
-            args: Prisma.petCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload>
+            args: Prisma.UsuarioCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
           }
           createMany: {
-            args: Prisma.petCreateManyArgs<ExtArgs>
+            args: Prisma.UsuarioCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.petDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload>
+            args: Prisma.UsuarioDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
           }
           update: {
-            args: Prisma.petUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload>
+            args: Prisma.UsuarioUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
           }
           deleteMany: {
-            args: Prisma.petDeleteManyArgs<ExtArgs>
+            args: Prisma.UsuarioDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.petUpdateManyArgs<ExtArgs>
+            args: Prisma.UsuarioUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.petUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$petPayload>
+            args: Prisma.UsuarioUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$UsuarioPayload>
+          }
+          aggregate: {
+            args: Prisma.UsuarioAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateUsuario>
+          }
+          groupBy: {
+            args: Prisma.UsuarioGroupByArgs<ExtArgs>
+            result: $Utils.Optional<UsuarioGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.UsuarioCountArgs<ExtArgs>
+            result: $Utils.Optional<UsuarioCountAggregateOutputType> | number
+          }
+        }
+      }
+      Pet: {
+        payload: Prisma.$PetPayload<ExtArgs>
+        fields: Prisma.PetFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PetFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PetFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload>
+          }
+          findFirst: {
+            args: Prisma.PetFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PetFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload>
+          }
+          findMany: {
+            args: Prisma.PetFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload>[]
+          }
+          create: {
+            args: Prisma.PetCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload>
+          }
+          createMany: {
+            args: Prisma.PetCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.PetDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload>
+          }
+          update: {
+            args: Prisma.PetUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload>
+          }
+          deleteMany: {
+            args: Prisma.PetDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PetUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.PetUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PetPayload>
           }
           aggregate: {
             args: Prisma.PetAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregatePet>
           }
           groupBy: {
-            args: Prisma.petGroupByArgs<ExtArgs>
+            args: Prisma.PetGroupByArgs<ExtArgs>
             result: $Utils.Optional<PetGroupByOutputType>[]
           }
           count: {
-            args: Prisma.petCountArgs<ExtArgs>
+            args: Prisma.PetCountArgs<ExtArgs>
             result: $Utils.Optional<PetCountAggregateOutputType> | number
           }
         }
       }
-      produto: {
-        payload: Prisma.$produtoPayload<ExtArgs>
-        fields: Prisma.produtoFieldRefs
+      Produto: {
+        payload: Prisma.$ProdutoPayload<ExtArgs>
+        fields: Prisma.ProdutoFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.produtoFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload> | null
+            args: Prisma.ProdutoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.produtoFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload>
+            args: Prisma.ProdutoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload>
           }
           findFirst: {
-            args: Prisma.produtoFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload> | null
+            args: Prisma.ProdutoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.produtoFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload>
+            args: Prisma.ProdutoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload>
           }
           findMany: {
-            args: Prisma.produtoFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload>[]
+            args: Prisma.ProdutoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload>[]
           }
           create: {
-            args: Prisma.produtoCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload>
+            args: Prisma.ProdutoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload>
           }
           createMany: {
-            args: Prisma.produtoCreateManyArgs<ExtArgs>
+            args: Prisma.ProdutoCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           delete: {
-            args: Prisma.produtoDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload>
+            args: Prisma.ProdutoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload>
           }
           update: {
-            args: Prisma.produtoUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload>
+            args: Prisma.ProdutoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload>
           }
           deleteMany: {
-            args: Prisma.produtoDeleteManyArgs<ExtArgs>
+            args: Prisma.ProdutoDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.produtoUpdateManyArgs<ExtArgs>
+            args: Prisma.ProdutoUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.produtoUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$produtoPayload>
+            args: Prisma.ProdutoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProdutoPayload>
           }
           aggregate: {
             args: Prisma.ProdutoAggregateArgs<ExtArgs>
             result: $Utils.Optional<AggregateProduto>
           }
           groupBy: {
-            args: Prisma.produtoGroupByArgs<ExtArgs>
+            args: Prisma.ProdutoGroupByArgs<ExtArgs>
             result: $Utils.Optional<ProdutoGroupByOutputType>[]
           }
           count: {
-            args: Prisma.produtoCountArgs<ExtArgs>
+            args: Prisma.ProdutoCountArgs<ExtArgs>
             result: $Utils.Optional<ProdutoCountAggregateOutputType> | number
-          }
-        }
-      }
-      user: {
-        payload: Prisma.$userPayload<ExtArgs>
-        fields: Prisma.userFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.userFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.userFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload>
-          }
-          findFirst: {
-            args: Prisma.userFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.userFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload>
-          }
-          findMany: {
-            args: Prisma.userFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload>[]
-          }
-          create: {
-            args: Prisma.userCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload>
-          }
-          createMany: {
-            args: Prisma.userCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          delete: {
-            args: Prisma.userDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload>
-          }
-          update: {
-            args: Prisma.userUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload>
-          }
-          deleteMany: {
-            args: Prisma.userDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.userUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          upsert: {
-            args: Prisma.userUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$userPayload>
-          }
-          aggregate: {
-            args: Prisma.UserAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateUser>
-          }
-          groupBy: {
-            args: Prisma.userGroupByArgs<ExtArgs>
-            result: $Utils.Optional<UserGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.userCountArgs<ExtArgs>
-            result: $Utils.Optional<UserCountAggregateOutputType> | number
           }
         }
       }
@@ -930,9 +930,9 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    pet?: petOmit
-    produto?: produtoOmit
-    user?: userOmit
+    usuario?: UsuarioOmit
+    pet?: PetOmit
+    produto?: ProdutoOmit
   }
 
   /* Types for Logging */
@@ -1022,13 +1022,1052 @@ export namespace Prisma {
    */
 
 
+  /**
+   * Count Type UsuarioCountOutputType
+   */
+
+  export type UsuarioCountOutputType = {
+    pets: number
+  }
+
+  export type UsuarioCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    pets?: boolean | UsuarioCountOutputTypeCountPetsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * UsuarioCountOutputType without action
+   */
+  export type UsuarioCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsuarioCountOutputType
+     */
+    select?: UsuarioCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * UsuarioCountOutputType without action
+   */
+  export type UsuarioCountOutputTypeCountPetsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PetWhereInput
+  }
+
+
+  /**
+   * Count Type PetCountOutputType
+   */
+
+  export type PetCountOutputType = {
+    produtos: number
+  }
+
+  export type PetCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    produtos?: boolean | PetCountOutputTypeCountProdutosArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * PetCountOutputType without action
+   */
+  export type PetCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PetCountOutputType
+     */
+    select?: PetCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * PetCountOutputType without action
+   */
+  export type PetCountOutputTypeCountProdutosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProdutoWhereInput
+  }
+
 
   /**
    * Models
    */
 
   /**
-   * Model pet
+   * Model Usuario
+   */
+
+  export type AggregateUsuario = {
+    _count: UsuarioCountAggregateOutputType | null
+    _avg: UsuarioAvgAggregateOutputType | null
+    _sum: UsuarioSumAggregateOutputType | null
+    _min: UsuarioMinAggregateOutputType | null
+    _max: UsuarioMaxAggregateOutputType | null
+  }
+
+  export type UsuarioAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type UsuarioSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type UsuarioMinAggregateOutputType = {
+    id: number | null
+    nome: string | null
+    email: string | null
+    senha: string | null
+  }
+
+  export type UsuarioMaxAggregateOutputType = {
+    id: number | null
+    nome: string | null
+    email: string | null
+    senha: string | null
+  }
+
+  export type UsuarioCountAggregateOutputType = {
+    id: number
+    nome: number
+    email: number
+    senha: number
+    _all: number
+  }
+
+
+  export type UsuarioAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type UsuarioSumAggregateInputType = {
+    id?: true
+  }
+
+  export type UsuarioMinAggregateInputType = {
+    id?: true
+    nome?: true
+    email?: true
+    senha?: true
+  }
+
+  export type UsuarioMaxAggregateInputType = {
+    id?: true
+    nome?: true
+    email?: true
+    senha?: true
+  }
+
+  export type UsuarioCountAggregateInputType = {
+    id?: true
+    nome?: true
+    email?: true
+    senha?: true
+    _all?: true
+  }
+
+  export type UsuarioAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Usuario to aggregate.
+     */
+    where?: UsuarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Usuarios to fetch.
+     */
+    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: UsuarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Usuarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Usuarios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Usuarios
+    **/
+    _count?: true | UsuarioCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: UsuarioAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: UsuarioSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: UsuarioMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: UsuarioMaxAggregateInputType
+  }
+
+  export type GetUsuarioAggregateType<T extends UsuarioAggregateArgs> = {
+        [P in keyof T & keyof AggregateUsuario]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateUsuario[P]>
+      : GetScalarType<T[P], AggregateUsuario[P]>
+  }
+
+
+
+
+  export type UsuarioGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UsuarioWhereInput
+    orderBy?: UsuarioOrderByWithAggregationInput | UsuarioOrderByWithAggregationInput[]
+    by: UsuarioScalarFieldEnum[] | UsuarioScalarFieldEnum
+    having?: UsuarioScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: UsuarioCountAggregateInputType | true
+    _avg?: UsuarioAvgAggregateInputType
+    _sum?: UsuarioSumAggregateInputType
+    _min?: UsuarioMinAggregateInputType
+    _max?: UsuarioMaxAggregateInputType
+  }
+
+  export type UsuarioGroupByOutputType = {
+    id: number
+    nome: string
+    email: string
+    senha: string
+    _count: UsuarioCountAggregateOutputType | null
+    _avg: UsuarioAvgAggregateOutputType | null
+    _sum: UsuarioSumAggregateOutputType | null
+    _min: UsuarioMinAggregateOutputType | null
+    _max: UsuarioMaxAggregateOutputType | null
+  }
+
+  type GetUsuarioGroupByPayload<T extends UsuarioGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<UsuarioGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof UsuarioGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], UsuarioGroupByOutputType[P]>
+            : GetScalarType<T[P], UsuarioGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type UsuarioSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    nome?: boolean
+    email?: boolean
+    senha?: boolean
+    pets?: boolean | Usuario$petsArgs<ExtArgs>
+    _count?: boolean | UsuarioCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["usuario"]>
+
+
+
+  export type UsuarioSelectScalar = {
+    id?: boolean
+    nome?: boolean
+    email?: boolean
+    senha?: boolean
+  }
+
+  export type UsuarioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha", ExtArgs["result"]["usuario"]>
+  export type UsuarioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    pets?: boolean | Usuario$petsArgs<ExtArgs>
+    _count?: boolean | UsuarioCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $UsuarioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Usuario"
+    objects: {
+      pets: Prisma.$PetPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      nome: string
+      email: string
+      senha: string
+    }, ExtArgs["result"]["usuario"]>
+    composites: {}
+  }
+
+  type UsuarioGetPayload<S extends boolean | null | undefined | UsuarioDefaultArgs> = $Result.GetResult<Prisma.$UsuarioPayload, S>
+
+  type UsuarioCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<UsuarioFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: UsuarioCountAggregateInputType | true
+    }
+
+  export interface UsuarioDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Usuario'], meta: { name: 'Usuario' } }
+    /**
+     * Find zero or one Usuario that matches the filter.
+     * @param {UsuarioFindUniqueArgs} args - Arguments to find a Usuario
+     * @example
+     * // Get one Usuario
+     * const usuario = await prisma.usuario.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends UsuarioFindUniqueArgs>(args: SelectSubset<T, UsuarioFindUniqueArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Usuario that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {UsuarioFindUniqueOrThrowArgs} args - Arguments to find a Usuario
+     * @example
+     * // Get one Usuario
+     * const usuario = await prisma.usuario.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends UsuarioFindUniqueOrThrowArgs>(args: SelectSubset<T, UsuarioFindUniqueOrThrowArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Usuario that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsuarioFindFirstArgs} args - Arguments to find a Usuario
+     * @example
+     * // Get one Usuario
+     * const usuario = await prisma.usuario.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends UsuarioFindFirstArgs>(args?: SelectSubset<T, UsuarioFindFirstArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Usuario that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsuarioFindFirstOrThrowArgs} args - Arguments to find a Usuario
+     * @example
+     * // Get one Usuario
+     * const usuario = await prisma.usuario.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends UsuarioFindFirstOrThrowArgs>(args?: SelectSubset<T, UsuarioFindFirstOrThrowArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Usuarios that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsuarioFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Usuarios
+     * const usuarios = await prisma.usuario.findMany()
+     * 
+     * // Get first 10 Usuarios
+     * const usuarios = await prisma.usuario.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const usuarioWithIdOnly = await prisma.usuario.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends UsuarioFindManyArgs>(args?: SelectSubset<T, UsuarioFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Usuario.
+     * @param {UsuarioCreateArgs} args - Arguments to create a Usuario.
+     * @example
+     * // Create one Usuario
+     * const Usuario = await prisma.usuario.create({
+     *   data: {
+     *     // ... data to create a Usuario
+     *   }
+     * })
+     * 
+     */
+    create<T extends UsuarioCreateArgs>(args: SelectSubset<T, UsuarioCreateArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Usuarios.
+     * @param {UsuarioCreateManyArgs} args - Arguments to create many Usuarios.
+     * @example
+     * // Create many Usuarios
+     * const usuario = await prisma.usuario.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends UsuarioCreateManyArgs>(args?: SelectSubset<T, UsuarioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Usuario.
+     * @param {UsuarioDeleteArgs} args - Arguments to delete one Usuario.
+     * @example
+     * // Delete one Usuario
+     * const Usuario = await prisma.usuario.delete({
+     *   where: {
+     *     // ... filter to delete one Usuario
+     *   }
+     * })
+     * 
+     */
+    delete<T extends UsuarioDeleteArgs>(args: SelectSubset<T, UsuarioDeleteArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Usuario.
+     * @param {UsuarioUpdateArgs} args - Arguments to update one Usuario.
+     * @example
+     * // Update one Usuario
+     * const usuario = await prisma.usuario.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends UsuarioUpdateArgs>(args: SelectSubset<T, UsuarioUpdateArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Usuarios.
+     * @param {UsuarioDeleteManyArgs} args - Arguments to filter Usuarios to delete.
+     * @example
+     * // Delete a few Usuarios
+     * const { count } = await prisma.usuario.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends UsuarioDeleteManyArgs>(args?: SelectSubset<T, UsuarioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Usuarios.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsuarioUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Usuarios
+     * const usuario = await prisma.usuario.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends UsuarioUpdateManyArgs>(args: SelectSubset<T, UsuarioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Usuario.
+     * @param {UsuarioUpsertArgs} args - Arguments to update or create a Usuario.
+     * @example
+     * // Update or create a Usuario
+     * const usuario = await prisma.usuario.upsert({
+     *   create: {
+     *     // ... data to create a Usuario
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Usuario we want to update
+     *   }
+     * })
+     */
+    upsert<T extends UsuarioUpsertArgs>(args: SelectSubset<T, UsuarioUpsertArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Usuarios.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsuarioCountArgs} args - Arguments to filter Usuarios to count.
+     * @example
+     * // Count the number of Usuarios
+     * const count = await prisma.usuario.count({
+     *   where: {
+     *     // ... the filter for the Usuarios we want to count
+     *   }
+     * })
+    **/
+    count<T extends UsuarioCountArgs>(
+      args?: Subset<T, UsuarioCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], UsuarioCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Usuario.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsuarioAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends UsuarioAggregateArgs>(args: Subset<T, UsuarioAggregateArgs>): Prisma.PrismaPromise<GetUsuarioAggregateType<T>>
+
+    /**
+     * Group by Usuario.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {UsuarioGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends UsuarioGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: UsuarioGroupByArgs['orderBy'] }
+        : { orderBy?: UsuarioGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, UsuarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUsuarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Usuario model
+   */
+  readonly fields: UsuarioFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Usuario.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__UsuarioClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    pets<T extends Usuario$petsArgs<ExtArgs> = {}>(args?: Subset<T, Usuario$petsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Usuario model
+   */
+  interface UsuarioFieldRefs {
+    readonly id: FieldRef<"Usuario", 'Int'>
+    readonly nome: FieldRef<"Usuario", 'String'>
+    readonly email: FieldRef<"Usuario", 'String'>
+    readonly senha: FieldRef<"Usuario", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Usuario findUnique
+   */
+  export type UsuarioFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Usuario to fetch.
+     */
+    where: UsuarioWhereUniqueInput
+  }
+
+  /**
+   * Usuario findUniqueOrThrow
+   */
+  export type UsuarioFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Usuario to fetch.
+     */
+    where: UsuarioWhereUniqueInput
+  }
+
+  /**
+   * Usuario findFirst
+   */
+  export type UsuarioFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Usuario to fetch.
+     */
+    where?: UsuarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Usuarios to fetch.
+     */
+    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Usuarios.
+     */
+    cursor?: UsuarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Usuarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Usuarios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Usuarios.
+     */
+    distinct?: UsuarioScalarFieldEnum | UsuarioScalarFieldEnum[]
+  }
+
+  /**
+   * Usuario findFirstOrThrow
+   */
+  export type UsuarioFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Usuario to fetch.
+     */
+    where?: UsuarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Usuarios to fetch.
+     */
+    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Usuarios.
+     */
+    cursor?: UsuarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Usuarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Usuarios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Usuarios.
+     */
+    distinct?: UsuarioScalarFieldEnum | UsuarioScalarFieldEnum[]
+  }
+
+  /**
+   * Usuario findMany
+   */
+  export type UsuarioFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Usuarios to fetch.
+     */
+    where?: UsuarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Usuarios to fetch.
+     */
+    orderBy?: UsuarioOrderByWithRelationInput | UsuarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Usuarios.
+     */
+    cursor?: UsuarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Usuarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Usuarios.
+     */
+    skip?: number
+    distinct?: UsuarioScalarFieldEnum | UsuarioScalarFieldEnum[]
+  }
+
+  /**
+   * Usuario create
+   */
+  export type UsuarioCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Usuario.
+     */
+    data: XOR<UsuarioCreateInput, UsuarioUncheckedCreateInput>
+  }
+
+  /**
+   * Usuario createMany
+   */
+  export type UsuarioCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Usuarios.
+     */
+    data: UsuarioCreateManyInput | UsuarioCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Usuario update
+   */
+  export type UsuarioUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Usuario.
+     */
+    data: XOR<UsuarioUpdateInput, UsuarioUncheckedUpdateInput>
+    /**
+     * Choose, which Usuario to update.
+     */
+    where: UsuarioWhereUniqueInput
+  }
+
+  /**
+   * Usuario updateMany
+   */
+  export type UsuarioUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Usuarios.
+     */
+    data: XOR<UsuarioUpdateManyMutationInput, UsuarioUncheckedUpdateManyInput>
+    /**
+     * Filter which Usuarios to update
+     */
+    where?: UsuarioWhereInput
+    /**
+     * Limit how many Usuarios to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Usuario upsert
+   */
+  export type UsuarioUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Usuario to update in case it exists.
+     */
+    where: UsuarioWhereUniqueInput
+    /**
+     * In case the Usuario found by the `where` argument doesn't exist, create a new Usuario with this data.
+     */
+    create: XOR<UsuarioCreateInput, UsuarioUncheckedCreateInput>
+    /**
+     * In case the Usuario was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<UsuarioUpdateInput, UsuarioUncheckedUpdateInput>
+  }
+
+  /**
+   * Usuario delete
+   */
+  export type UsuarioDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+    /**
+     * Filter which Usuario to delete.
+     */
+    where: UsuarioWhereUniqueInput
+  }
+
+  /**
+   * Usuario deleteMany
+   */
+  export type UsuarioDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Usuarios to delete
+     */
+    where?: UsuarioWhereInput
+    /**
+     * Limit how many Usuarios to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Usuario.pets
+   */
+  export type Usuario$petsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Pet
+     */
+    select?: PetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Pet
+     */
+    omit?: PetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PetInclude<ExtArgs> | null
+    where?: PetWhereInput
+    orderBy?: PetOrderByWithRelationInput | PetOrderByWithRelationInput[]
+    cursor?: PetWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PetScalarFieldEnum | PetScalarFieldEnum[]
+  }
+
+  /**
+   * Usuario without action
+   */
+  export type UsuarioDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Usuario
+     */
+    select?: UsuarioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Usuario
+     */
+    omit?: UsuarioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UsuarioInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Pet
    */
 
   export type AggregatePet = {
@@ -1041,98 +2080,102 @@ export namespace Prisma {
 
   export type PetAvgAggregateOutputType = {
     id: number | null
+    usuarioId: number | null
   }
 
   export type PetSumAggregateOutputType = {
     id: number | null
+    usuarioId: number | null
   }
 
   export type PetMinAggregateOutputType = {
     id: number | null
-    DonoNome: string | null
-    NomePet: string | null
+    nome: string | null
     raca: string | null
+    usuarioId: number | null
   }
 
   export type PetMaxAggregateOutputType = {
     id: number | null
-    DonoNome: string | null
-    NomePet: string | null
+    nome: string | null
     raca: string | null
+    usuarioId: number | null
   }
 
   export type PetCountAggregateOutputType = {
     id: number
-    DonoNome: number
-    NomePet: number
+    nome: number
     raca: number
+    usuarioId: number
     _all: number
   }
 
 
   export type PetAvgAggregateInputType = {
     id?: true
+    usuarioId?: true
   }
 
   export type PetSumAggregateInputType = {
     id?: true
+    usuarioId?: true
   }
 
   export type PetMinAggregateInputType = {
     id?: true
-    DonoNome?: true
-    NomePet?: true
+    nome?: true
     raca?: true
+    usuarioId?: true
   }
 
   export type PetMaxAggregateInputType = {
     id?: true
-    DonoNome?: true
-    NomePet?: true
+    nome?: true
     raca?: true
+    usuarioId?: true
   }
 
   export type PetCountAggregateInputType = {
     id?: true
-    DonoNome?: true
-    NomePet?: true
+    nome?: true
     raca?: true
+    usuarioId?: true
     _all?: true
   }
 
   export type PetAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which pet to aggregate.
+     * Filter which Pet to aggregate.
      */
-    where?: petWhereInput
+    where?: PetWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of pets to fetch.
+     * Determine the order of Pets to fetch.
      */
-    orderBy?: petOrderByWithRelationInput | petOrderByWithRelationInput[]
+    orderBy?: PetOrderByWithRelationInput | PetOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: petWhereUniqueInput
+    cursor?: PetWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` pets from the position of the cursor.
+     * Take `±n` Pets from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` pets.
+     * Skip the first `n` Pets.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned pets
+     * Count returned Pets
     **/
     _count?: true | PetCountAggregateInputType
     /**
@@ -1172,11 +2215,11 @@ export namespace Prisma {
 
 
 
-  export type petGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: petWhereInput
-    orderBy?: petOrderByWithAggregationInput | petOrderByWithAggregationInput[]
+  export type PetGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PetWhereInput
+    orderBy?: PetOrderByWithAggregationInput | PetOrderByWithAggregationInput[]
     by: PetScalarFieldEnum[] | PetScalarFieldEnum
-    having?: petScalarWhereWithAggregatesInput
+    having?: PetScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: PetCountAggregateInputType | true
@@ -1188,9 +2231,9 @@ export namespace Prisma {
 
   export type PetGroupByOutputType = {
     id: number
-    DonoNome: string
-    NomePet: string
+    nome: string
     raca: string
+    usuarioId: number
     _count: PetCountAggregateOutputType | null
     _avg: PetAvgAggregateOutputType | null
     _sum: PetSumAggregateOutputType | null
@@ -1198,7 +2241,7 @@ export namespace Prisma {
     _max: PetMaxAggregateOutputType | null
   }
 
-  type GetPetGroupByPayload<T extends petGroupByArgs> = Prisma.PrismaPromise<
+  type GetPetGroupByPayload<T extends PetGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<PetGroupByOutputType, T['by']> &
         {
@@ -1212,48 +2255,59 @@ export namespace Prisma {
     >
 
 
-  export type petSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type PetSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    DonoNome?: boolean
-    NomePet?: boolean
+    nome?: boolean
     raca?: boolean
+    usuarioId?: boolean
+    usuarioRel?: boolean | UsuarioDefaultArgs<ExtArgs>
+    produtos?: boolean | Pet$produtosArgs<ExtArgs>
+    _count?: boolean | PetCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["pet"]>
 
 
 
-  export type petSelectScalar = {
+  export type PetSelectScalar = {
     id?: boolean
-    DonoNome?: boolean
-    NomePet?: boolean
+    nome?: boolean
     raca?: boolean
+    usuarioId?: boolean
   }
 
-  export type petOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "DonoNome" | "NomePet" | "raca", ExtArgs["result"]["pet"]>
+  export type PetOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "raca" | "usuarioId", ExtArgs["result"]["pet"]>
+  export type PetInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    usuarioRel?: boolean | UsuarioDefaultArgs<ExtArgs>
+    produtos?: boolean | Pet$produtosArgs<ExtArgs>
+    _count?: boolean | PetCountOutputTypeDefaultArgs<ExtArgs>
+  }
 
-  export type $petPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "pet"
-    objects: {}
+  export type $PetPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Pet"
+    objects: {
+      usuarioRel: Prisma.$UsuarioPayload<ExtArgs>
+      produtos: Prisma.$ProdutoPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      DonoNome: string
-      NomePet: string
+      nome: string
       raca: string
+      usuarioId: number
     }, ExtArgs["result"]["pet"]>
     composites: {}
   }
 
-  type petGetPayload<S extends boolean | null | undefined | petDefaultArgs> = $Result.GetResult<Prisma.$petPayload, S>
+  type PetGetPayload<S extends boolean | null | undefined | PetDefaultArgs> = $Result.GetResult<Prisma.$PetPayload, S>
 
-  type petCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<petFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type PetCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PetFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: PetCountAggregateInputType | true
     }
 
-  export interface petDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['pet'], meta: { name: 'pet' } }
+  export interface PetDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Pet'], meta: { name: 'Pet' } }
     /**
      * Find zero or one Pet that matches the filter.
-     * @param {petFindUniqueArgs} args - Arguments to find a Pet
+     * @param {PetFindUniqueArgs} args - Arguments to find a Pet
      * @example
      * // Get one Pet
      * const pet = await prisma.pet.findUnique({
@@ -1262,12 +2316,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends petFindUniqueArgs>(args: SelectSubset<T, petFindUniqueArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends PetFindUniqueArgs>(args: SelectSubset<T, PetFindUniqueArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Pet that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {petFindUniqueOrThrowArgs} args - Arguments to find a Pet
+     * @param {PetFindUniqueOrThrowArgs} args - Arguments to find a Pet
      * @example
      * // Get one Pet
      * const pet = await prisma.pet.findUniqueOrThrow({
@@ -1276,13 +2330,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends petFindUniqueOrThrowArgs>(args: SelectSubset<T, petFindUniqueOrThrowArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends PetFindUniqueOrThrowArgs>(args: SelectSubset<T, PetFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Pet that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {petFindFirstArgs} args - Arguments to find a Pet
+     * @param {PetFindFirstArgs} args - Arguments to find a Pet
      * @example
      * // Get one Pet
      * const pet = await prisma.pet.findFirst({
@@ -1291,14 +2345,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends petFindFirstArgs>(args?: SelectSubset<T, petFindFirstArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends PetFindFirstArgs>(args?: SelectSubset<T, PetFindFirstArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Pet that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {petFindFirstOrThrowArgs} args - Arguments to find a Pet
+     * @param {PetFindFirstOrThrowArgs} args - Arguments to find a Pet
      * @example
      * // Get one Pet
      * const pet = await prisma.pet.findFirstOrThrow({
@@ -1307,13 +2361,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends petFindFirstOrThrowArgs>(args?: SelectSubset<T, petFindFirstOrThrowArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends PetFindFirstOrThrowArgs>(args?: SelectSubset<T, PetFindFirstOrThrowArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Pets that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {petFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {PetFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Pets
      * const pets = await prisma.pet.findMany()
@@ -1325,11 +2379,11 @@ export namespace Prisma {
      * const petWithIdOnly = await prisma.pet.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends petFindManyArgs>(args?: SelectSubset<T, petFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends PetFindManyArgs>(args?: SelectSubset<T, PetFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Pet.
-     * @param {petCreateArgs} args - Arguments to create a Pet.
+     * @param {PetCreateArgs} args - Arguments to create a Pet.
      * @example
      * // Create one Pet
      * const Pet = await prisma.pet.create({
@@ -1339,11 +2393,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends petCreateArgs>(args: SelectSubset<T, petCreateArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends PetCreateArgs>(args: SelectSubset<T, PetCreateArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Pets.
-     * @param {petCreateManyArgs} args - Arguments to create many Pets.
+     * @param {PetCreateManyArgs} args - Arguments to create many Pets.
      * @example
      * // Create many Pets
      * const pet = await prisma.pet.createMany({
@@ -1353,11 +2407,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends petCreateManyArgs>(args?: SelectSubset<T, petCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends PetCreateManyArgs>(args?: SelectSubset<T, PetCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Pet.
-     * @param {petDeleteArgs} args - Arguments to delete one Pet.
+     * @param {PetDeleteArgs} args - Arguments to delete one Pet.
      * @example
      * // Delete one Pet
      * const Pet = await prisma.pet.delete({
@@ -1367,11 +2421,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends petDeleteArgs>(args: SelectSubset<T, petDeleteArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends PetDeleteArgs>(args: SelectSubset<T, PetDeleteArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Pet.
-     * @param {petUpdateArgs} args - Arguments to update one Pet.
+     * @param {PetUpdateArgs} args - Arguments to update one Pet.
      * @example
      * // Update one Pet
      * const pet = await prisma.pet.update({
@@ -1384,11 +2438,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends petUpdateArgs>(args: SelectSubset<T, petUpdateArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends PetUpdateArgs>(args: SelectSubset<T, PetUpdateArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Pets.
-     * @param {petDeleteManyArgs} args - Arguments to filter Pets to delete.
+     * @param {PetDeleteManyArgs} args - Arguments to filter Pets to delete.
      * @example
      * // Delete a few Pets
      * const { count } = await prisma.pet.deleteMany({
@@ -1398,13 +2452,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends petDeleteManyArgs>(args?: SelectSubset<T, petDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends PetDeleteManyArgs>(args?: SelectSubset<T, PetDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Pets.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {petUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {PetUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Pets
      * const pet = await prisma.pet.updateMany({
@@ -1417,11 +2471,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends petUpdateManyArgs>(args: SelectSubset<T, petUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends PetUpdateManyArgs>(args: SelectSubset<T, PetUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Pet.
-     * @param {petUpsertArgs} args - Arguments to update or create a Pet.
+     * @param {PetUpsertArgs} args - Arguments to update or create a Pet.
      * @example
      * // Update or create a Pet
      * const pet = await prisma.pet.upsert({
@@ -1436,14 +2490,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends petUpsertArgs>(args: SelectSubset<T, petUpsertArgs<ExtArgs>>): Prisma__petClient<$Result.GetResult<Prisma.$petPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends PetUpsertArgs>(args: SelectSubset<T, PetUpsertArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Pets.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {petCountArgs} args - Arguments to filter Pets to count.
+     * @param {PetCountArgs} args - Arguments to filter Pets to count.
      * @example
      * // Count the number of Pets
      * const count = await prisma.pet.count({
@@ -1452,8 +2506,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends petCountArgs>(
-      args?: Subset<T, petCountArgs>,
+    count<T extends PetCountArgs>(
+      args?: Subset<T, PetCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -1492,7 +2546,7 @@ export namespace Prisma {
      * Group by Pet.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {petGroupByArgs} args - Group by arguments.
+     * @param {PetGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1507,14 +2561,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends petGroupByArgs,
+      T extends PetGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: petGroupByArgs['orderBy'] }
-        : { orderBy?: petGroupByArgs['orderBy'] },
+        ? { orderBy: PetGroupByArgs['orderBy'] }
+        : { orderBy?: PetGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1563,21 +2617,23 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, petGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPetGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, PetGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPetGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the pet model
+   * Fields of the Pet model
    */
-  readonly fields: petFieldRefs;
+  readonly fields: PetFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for pet.
+   * The delegate class that acts as a "Promise-like" for Pet.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__petClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__PetClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    usuarioRel<T extends UsuarioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UsuarioDefaultArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    produtos<T extends Pet$produtosArgs<ExtArgs> = {}>(args?: Subset<T, Pet$produtosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1604,336 +2660,400 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the pet model
+   * Fields of the Pet model
    */
-  interface petFieldRefs {
-    readonly id: FieldRef<"pet", 'Int'>
-    readonly DonoNome: FieldRef<"pet", 'String'>
-    readonly NomePet: FieldRef<"pet", 'String'>
-    readonly raca: FieldRef<"pet", 'String'>
+  interface PetFieldRefs {
+    readonly id: FieldRef<"Pet", 'Int'>
+    readonly nome: FieldRef<"Pet", 'String'>
+    readonly raca: FieldRef<"Pet", 'String'>
+    readonly usuarioId: FieldRef<"Pet", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * pet findUnique
+   * Pet findUnique
    */
-  export type petFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * Filter, which pet to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: petWhereUniqueInput
+    include?: PetInclude<ExtArgs> | null
+    /**
+     * Filter, which Pet to fetch.
+     */
+    where: PetWhereUniqueInput
   }
 
   /**
-   * pet findUniqueOrThrow
+   * Pet findUniqueOrThrow
    */
-  export type petFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * Filter, which pet to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: petWhereUniqueInput
+    include?: PetInclude<ExtArgs> | null
+    /**
+     * Filter, which Pet to fetch.
+     */
+    where: PetWhereUniqueInput
   }
 
   /**
-   * pet findFirst
+   * Pet findFirst
    */
-  export type petFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * Filter, which pet to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: petWhereInput
+    include?: PetInclude<ExtArgs> | null
+    /**
+     * Filter, which Pet to fetch.
+     */
+    where?: PetWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of pets to fetch.
+     * Determine the order of Pets to fetch.
      */
-    orderBy?: petOrderByWithRelationInput | petOrderByWithRelationInput[]
+    orderBy?: PetOrderByWithRelationInput | PetOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for pets.
+     * Sets the position for searching for Pets.
      */
-    cursor?: petWhereUniqueInput
+    cursor?: PetWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` pets from the position of the cursor.
+     * Take `±n` Pets from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` pets.
+     * Skip the first `n` Pets.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of pets.
+     * Filter by unique combinations of Pets.
      */
     distinct?: PetScalarFieldEnum | PetScalarFieldEnum[]
   }
 
   /**
-   * pet findFirstOrThrow
+   * Pet findFirstOrThrow
    */
-  export type petFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * Filter, which pet to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: petWhereInput
+    include?: PetInclude<ExtArgs> | null
+    /**
+     * Filter, which Pet to fetch.
+     */
+    where?: PetWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of pets to fetch.
+     * Determine the order of Pets to fetch.
      */
-    orderBy?: petOrderByWithRelationInput | petOrderByWithRelationInput[]
+    orderBy?: PetOrderByWithRelationInput | PetOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for pets.
+     * Sets the position for searching for Pets.
      */
-    cursor?: petWhereUniqueInput
+    cursor?: PetWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` pets from the position of the cursor.
+     * Take `±n` Pets from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` pets.
+     * Skip the first `n` Pets.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of pets.
+     * Filter by unique combinations of Pets.
      */
     distinct?: PetScalarFieldEnum | PetScalarFieldEnum[]
   }
 
   /**
-   * pet findMany
+   * Pet findMany
    */
-  export type petFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * Filter, which pets to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: petWhereInput
+    include?: PetInclude<ExtArgs> | null
+    /**
+     * Filter, which Pets to fetch.
+     */
+    where?: PetWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of pets to fetch.
+     * Determine the order of Pets to fetch.
      */
-    orderBy?: petOrderByWithRelationInput | petOrderByWithRelationInput[]
+    orderBy?: PetOrderByWithRelationInput | PetOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing pets.
+     * Sets the position for listing Pets.
      */
-    cursor?: petWhereUniqueInput
+    cursor?: PetWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` pets from the position of the cursor.
+     * Take `±n` Pets from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` pets.
+     * Skip the first `n` Pets.
      */
     skip?: number
     distinct?: PetScalarFieldEnum | PetScalarFieldEnum[]
   }
 
   /**
-   * pet create
+   * Pet create
    */
-  export type petCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * The data needed to create a pet.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<petCreateInput, petUncheckedCreateInput>
+    include?: PetInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Pet.
+     */
+    data: XOR<PetCreateInput, PetUncheckedCreateInput>
   }
 
   /**
-   * pet createMany
+   * Pet createMany
    */
-  export type petCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many pets.
+     * The data used to create many Pets.
      */
-    data: petCreateManyInput | petCreateManyInput[]
+    data: PetCreateManyInput | PetCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * pet update
+   * Pet update
    */
-  export type petUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * The data needed to update a pet.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<petUpdateInput, petUncheckedUpdateInput>
+    include?: PetInclude<ExtArgs> | null
     /**
-     * Choose, which pet to update.
+     * The data needed to update a Pet.
      */
-    where: petWhereUniqueInput
+    data: XOR<PetUpdateInput, PetUncheckedUpdateInput>
+    /**
+     * Choose, which Pet to update.
+     */
+    where: PetWhereUniqueInput
   }
 
   /**
-   * pet updateMany
+   * Pet updateMany
    */
-  export type petUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update pets.
+     * The data used to update Pets.
      */
-    data: XOR<petUpdateManyMutationInput, petUncheckedUpdateManyInput>
+    data: XOR<PetUpdateManyMutationInput, PetUncheckedUpdateManyInput>
     /**
-     * Filter which pets to update
+     * Filter which Pets to update
      */
-    where?: petWhereInput
+    where?: PetWhereInput
     /**
-     * Limit how many pets to update.
+     * Limit how many Pets to update.
      */
     limit?: number
   }
 
   /**
-   * pet upsert
+   * Pet upsert
    */
-  export type petUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * The filter to search for the pet to update in case it exists.
+     * Choose, which related nodes to fetch as well
      */
-    where: petWhereUniqueInput
+    include?: PetInclude<ExtArgs> | null
     /**
-     * In case the pet found by the `where` argument doesn't exist, create a new pet with this data.
+     * The filter to search for the Pet to update in case it exists.
      */
-    create: XOR<petCreateInput, petUncheckedCreateInput>
+    where: PetWhereUniqueInput
     /**
-     * In case the pet was found with the provided `where` argument, update it with this data.
+     * In case the Pet found by the `where` argument doesn't exist, create a new Pet with this data.
      */
-    update: XOR<petUpdateInput, petUncheckedUpdateInput>
+    create: XOR<PetCreateInput, PetUncheckedCreateInput>
+    /**
+     * In case the Pet was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PetUpdateInput, PetUncheckedUpdateInput>
   }
 
   /**
-   * pet delete
+   * Pet delete
    */
-  export type petDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Pet
      */
-    select?: petSelect<ExtArgs> | null
+    select?: PetSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Pet
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: PetOmit<ExtArgs> | null
     /**
-     * Filter which pet to delete.
+     * Choose, which related nodes to fetch as well
      */
-    where: petWhereUniqueInput
+    include?: PetInclude<ExtArgs> | null
+    /**
+     * Filter which Pet to delete.
+     */
+    where: PetWhereUniqueInput
   }
 
   /**
-   * pet deleteMany
+   * Pet deleteMany
    */
-  export type petDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PetDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which pets to delete
+     * Filter which Pets to delete
      */
-    where?: petWhereInput
+    where?: PetWhereInput
     /**
-     * Limit how many pets to delete.
+     * Limit how many Pets to delete.
      */
     limit?: number
   }
 
   /**
-   * pet without action
+   * Pet.produtos
    */
-  export type petDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Pet$produtosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the pet
+     * Select specific fields to fetch from the Produto
      */
-    select?: petSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the pet
+     * Omit specific fields from the Produto
      */
-    omit?: petOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProdutoInclude<ExtArgs> | null
+    where?: ProdutoWhereInput
+    orderBy?: ProdutoOrderByWithRelationInput | ProdutoOrderByWithRelationInput[]
+    cursor?: ProdutoWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProdutoScalarFieldEnum | ProdutoScalarFieldEnum[]
+  }
+
+  /**
+   * Pet without action
+   */
+  export type PetDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Pet
+     */
+    select?: PetSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Pet
+     */
+    omit?: PetOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PetInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model produto
+   * Model Produto
    */
 
   export type AggregateProduto = {
@@ -1946,98 +3066,112 @@ export namespace Prisma {
 
   export type ProdutoAvgAggregateOutputType = {
     id: number | null
+    preco: number | null
+    petId: number | null
   }
 
   export type ProdutoSumAggregateOutputType = {
     id: number | null
+    preco: number | null
+    petId: number | null
   }
 
   export type ProdutoMinAggregateOutputType = {
     id: number | null
-    name: string | null
+    nome: string | null
     tipo: string | null
-    preco: string | null
+    preco: number | null
+    petId: number | null
   }
 
   export type ProdutoMaxAggregateOutputType = {
     id: number | null
-    name: string | null
+    nome: string | null
     tipo: string | null
-    preco: string | null
+    preco: number | null
+    petId: number | null
   }
 
   export type ProdutoCountAggregateOutputType = {
     id: number
-    name: number
+    nome: number
     tipo: number
     preco: number
+    petId: number
     _all: number
   }
 
 
   export type ProdutoAvgAggregateInputType = {
     id?: true
+    preco?: true
+    petId?: true
   }
 
   export type ProdutoSumAggregateInputType = {
     id?: true
+    preco?: true
+    petId?: true
   }
 
   export type ProdutoMinAggregateInputType = {
     id?: true
-    name?: true
+    nome?: true
     tipo?: true
     preco?: true
+    petId?: true
   }
 
   export type ProdutoMaxAggregateInputType = {
     id?: true
-    name?: true
+    nome?: true
     tipo?: true
     preco?: true
+    petId?: true
   }
 
   export type ProdutoCountAggregateInputType = {
     id?: true
-    name?: true
+    nome?: true
     tipo?: true
     preco?: true
+    petId?: true
     _all?: true
   }
 
   export type ProdutoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which produto to aggregate.
+     * Filter which Produto to aggregate.
      */
-    where?: produtoWhereInput
+    where?: ProdutoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of produtos to fetch.
+     * Determine the order of Produtos to fetch.
      */
-    orderBy?: produtoOrderByWithRelationInput | produtoOrderByWithRelationInput[]
+    orderBy?: ProdutoOrderByWithRelationInput | ProdutoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: produtoWhereUniqueInput
+    cursor?: ProdutoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` produtos from the position of the cursor.
+     * Take `±n` Produtos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` produtos.
+     * Skip the first `n` Produtos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned produtos
+     * Count returned Produtos
     **/
     _count?: true | ProdutoCountAggregateInputType
     /**
@@ -2077,11 +3211,11 @@ export namespace Prisma {
 
 
 
-  export type produtoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: produtoWhereInput
-    orderBy?: produtoOrderByWithAggregationInput | produtoOrderByWithAggregationInput[]
+  export type ProdutoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProdutoWhereInput
+    orderBy?: ProdutoOrderByWithAggregationInput | ProdutoOrderByWithAggregationInput[]
     by: ProdutoScalarFieldEnum[] | ProdutoScalarFieldEnum
-    having?: produtoScalarWhereWithAggregatesInput
+    having?: ProdutoScalarWhereWithAggregatesInput
     take?: number
     skip?: number
     _count?: ProdutoCountAggregateInputType | true
@@ -2093,9 +3227,10 @@ export namespace Prisma {
 
   export type ProdutoGroupByOutputType = {
     id: number
-    name: string
+    nome: string
     tipo: string
-    preco: string
+    preco: number
+    petId: number
     _count: ProdutoCountAggregateOutputType | null
     _avg: ProdutoAvgAggregateOutputType | null
     _sum: ProdutoSumAggregateOutputType | null
@@ -2103,7 +3238,7 @@ export namespace Prisma {
     _max: ProdutoMaxAggregateOutputType | null
   }
 
-  type GetProdutoGroupByPayload<T extends produtoGroupByArgs> = Prisma.PrismaPromise<
+  type GetProdutoGroupByPayload<T extends ProdutoGroupByArgs> = Prisma.PrismaPromise<
     Array<
       PickEnumerable<ProdutoGroupByOutputType, T['by']> &
         {
@@ -2117,48 +3252,57 @@ export namespace Prisma {
     >
 
 
-  export type produtoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type ProdutoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    nome?: boolean
     tipo?: boolean
     preco?: boolean
+    petId?: boolean
+    petRel?: boolean | PetDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["produto"]>
 
 
 
-  export type produtoSelectScalar = {
+  export type ProdutoSelectScalar = {
     id?: boolean
-    name?: boolean
+    nome?: boolean
     tipo?: boolean
     preco?: boolean
+    petId?: boolean
   }
 
-  export type produtoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "tipo" | "preco", ExtArgs["result"]["produto"]>
+  export type ProdutoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "tipo" | "preco" | "petId", ExtArgs["result"]["produto"]>
+  export type ProdutoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    petRel?: boolean | PetDefaultArgs<ExtArgs>
+  }
 
-  export type $produtoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "produto"
-    objects: {}
+  export type $ProdutoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Produto"
+    objects: {
+      petRel: Prisma.$PetPayload<ExtArgs>
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      name: string
+      nome: string
       tipo: string
-      preco: string
+      preco: number
+      petId: number
     }, ExtArgs["result"]["produto"]>
     composites: {}
   }
 
-  type produtoGetPayload<S extends boolean | null | undefined | produtoDefaultArgs> = $Result.GetResult<Prisma.$produtoPayload, S>
+  type ProdutoGetPayload<S extends boolean | null | undefined | ProdutoDefaultArgs> = $Result.GetResult<Prisma.$ProdutoPayload, S>
 
-  type produtoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<produtoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+  type ProdutoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProdutoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
       select?: ProdutoCountAggregateInputType | true
     }
 
-  export interface produtoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['produto'], meta: { name: 'produto' } }
+  export interface ProdutoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Produto'], meta: { name: 'Produto' } }
     /**
      * Find zero or one Produto that matches the filter.
-     * @param {produtoFindUniqueArgs} args - Arguments to find a Produto
+     * @param {ProdutoFindUniqueArgs} args - Arguments to find a Produto
      * @example
      * // Get one Produto
      * const produto = await prisma.produto.findUnique({
@@ -2167,12 +3311,12 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUnique<T extends produtoFindUniqueArgs>(args: SelectSubset<T, produtoFindUniqueArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends ProdutoFindUniqueArgs>(args: SelectSubset<T, ProdutoFindUniqueArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find one Produto that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {produtoFindUniqueOrThrowArgs} args - Arguments to find a Produto
+     * @param {ProdutoFindUniqueOrThrowArgs} args - Arguments to find a Produto
      * @example
      * // Get one Produto
      * const produto = await prisma.produto.findUniqueOrThrow({
@@ -2181,13 +3325,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findUniqueOrThrow<T extends produtoFindUniqueOrThrowArgs>(args: SelectSubset<T, produtoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends ProdutoFindUniqueOrThrowArgs>(args: SelectSubset<T, ProdutoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Produto that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {produtoFindFirstArgs} args - Arguments to find a Produto
+     * @param {ProdutoFindFirstArgs} args - Arguments to find a Produto
      * @example
      * // Get one Produto
      * const produto = await prisma.produto.findFirst({
@@ -2196,14 +3340,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirst<T extends produtoFindFirstArgs>(args?: SelectSubset<T, produtoFindFirstArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends ProdutoFindFirstArgs>(args?: SelectSubset<T, ProdutoFindFirstArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find the first Produto that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {produtoFindFirstOrThrowArgs} args - Arguments to find a Produto
+     * @param {ProdutoFindFirstOrThrowArgs} args - Arguments to find a Produto
      * @example
      * // Get one Produto
      * const produto = await prisma.produto.findFirstOrThrow({
@@ -2212,13 +3356,13 @@ export namespace Prisma {
      *   }
      * })
      */
-    findFirstOrThrow<T extends produtoFindFirstOrThrowArgs>(args?: SelectSubset<T, produtoFindFirstOrThrowArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends ProdutoFindFirstOrThrowArgs>(args?: SelectSubset<T, ProdutoFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Produtos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {produtoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {ProdutoFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Produtos
      * const produtos = await prisma.produto.findMany()
@@ -2230,11 +3374,11 @@ export namespace Prisma {
      * const produtoWithIdOnly = await prisma.produto.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends produtoFindManyArgs>(args?: SelectSubset<T, produtoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends ProdutoFindManyArgs>(args?: SelectSubset<T, ProdutoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
      * Create a Produto.
-     * @param {produtoCreateArgs} args - Arguments to create a Produto.
+     * @param {ProdutoCreateArgs} args - Arguments to create a Produto.
      * @example
      * // Create one Produto
      * const Produto = await prisma.produto.create({
@@ -2244,11 +3388,11 @@ export namespace Prisma {
      * })
      * 
      */
-    create<T extends produtoCreateArgs>(args: SelectSubset<T, produtoCreateArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends ProdutoCreateArgs>(args: SelectSubset<T, ProdutoCreateArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Produtos.
-     * @param {produtoCreateManyArgs} args - Arguments to create many Produtos.
+     * @param {ProdutoCreateManyArgs} args - Arguments to create many Produtos.
      * @example
      * // Create many Produtos
      * const produto = await prisma.produto.createMany({
@@ -2258,11 +3402,11 @@ export namespace Prisma {
      * })
      *     
      */
-    createMany<T extends produtoCreateManyArgs>(args?: SelectSubset<T, produtoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends ProdutoCreateManyArgs>(args?: SelectSubset<T, ProdutoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Produto.
-     * @param {produtoDeleteArgs} args - Arguments to delete one Produto.
+     * @param {ProdutoDeleteArgs} args - Arguments to delete one Produto.
      * @example
      * // Delete one Produto
      * const Produto = await prisma.produto.delete({
@@ -2272,11 +3416,11 @@ export namespace Prisma {
      * })
      * 
      */
-    delete<T extends produtoDeleteArgs>(args: SelectSubset<T, produtoDeleteArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends ProdutoDeleteArgs>(args: SelectSubset<T, ProdutoDeleteArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Update one Produto.
-     * @param {produtoUpdateArgs} args - Arguments to update one Produto.
+     * @param {ProdutoUpdateArgs} args - Arguments to update one Produto.
      * @example
      * // Update one Produto
      * const produto = await prisma.produto.update({
@@ -2289,11 +3433,11 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends produtoUpdateArgs>(args: SelectSubset<T, produtoUpdateArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends ProdutoUpdateArgs>(args: SelectSubset<T, ProdutoUpdateArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Produtos.
-     * @param {produtoDeleteManyArgs} args - Arguments to filter Produtos to delete.
+     * @param {ProdutoDeleteManyArgs} args - Arguments to filter Produtos to delete.
      * @example
      * // Delete a few Produtos
      * const { count } = await prisma.produto.deleteMany({
@@ -2303,13 +3447,13 @@ export namespace Prisma {
      * })
      * 
      */
-    deleteMany<T extends produtoDeleteManyArgs>(args?: SelectSubset<T, produtoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends ProdutoDeleteManyArgs>(args?: SelectSubset<T, ProdutoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Produtos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {produtoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {ProdutoUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Produtos
      * const produto = await prisma.produto.updateMany({
@@ -2322,11 +3466,11 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends produtoUpdateManyArgs>(args: SelectSubset<T, produtoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends ProdutoUpdateManyArgs>(args: SelectSubset<T, ProdutoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create or update one Produto.
-     * @param {produtoUpsertArgs} args - Arguments to update or create a Produto.
+     * @param {ProdutoUpsertArgs} args - Arguments to update or create a Produto.
      * @example
      * // Update or create a Produto
      * const produto = await prisma.produto.upsert({
@@ -2341,14 +3485,14 @@ export namespace Prisma {
      *   }
      * })
      */
-    upsert<T extends produtoUpsertArgs>(args: SelectSubset<T, produtoUpsertArgs<ExtArgs>>): Prisma__produtoClient<$Result.GetResult<Prisma.$produtoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends ProdutoUpsertArgs>(args: SelectSubset<T, ProdutoUpsertArgs<ExtArgs>>): Prisma__ProdutoClient<$Result.GetResult<Prisma.$ProdutoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Produtos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {produtoCountArgs} args - Arguments to filter Produtos to count.
+     * @param {ProdutoCountArgs} args - Arguments to filter Produtos to count.
      * @example
      * // Count the number of Produtos
      * const count = await prisma.produto.count({
@@ -2357,8 +3501,8 @@ export namespace Prisma {
      *   }
      * })
     **/
-    count<T extends produtoCountArgs>(
-      args?: Subset<T, produtoCountArgs>,
+    count<T extends ProdutoCountArgs>(
+      args?: Subset<T, ProdutoCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
@@ -2397,7 +3541,7 @@ export namespace Prisma {
      * Group by Produto.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {produtoGroupByArgs} args - Group by arguments.
+     * @param {ProdutoGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2412,14 +3556,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends produtoGroupByArgs,
+      T extends ProdutoGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: produtoGroupByArgs['orderBy'] }
-        : { orderBy?: produtoGroupByArgs['orderBy'] },
+        ? { orderBy: ProdutoGroupByArgs['orderBy'] }
+        : { orderBy?: ProdutoGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2468,21 +3612,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, produtoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProdutoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, ProdutoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProdutoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the produto model
+   * Fields of the Produto model
    */
-  readonly fields: produtoFieldRefs;
+  readonly fields: ProdutoFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for produto.
+   * The delegate class that acts as a "Promise-like" for Produto.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__produtoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__ProdutoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    petRel<T extends PetDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PetDefaultArgs<ExtArgs>>): Prisma__PetClient<$Result.GetResult<Prisma.$PetPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2509,1236 +3654,372 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the produto model
+   * Fields of the Produto model
    */
-  interface produtoFieldRefs {
-    readonly id: FieldRef<"produto", 'Int'>
-    readonly name: FieldRef<"produto", 'String'>
-    readonly tipo: FieldRef<"produto", 'String'>
-    readonly preco: FieldRef<"produto", 'String'>
+  interface ProdutoFieldRefs {
+    readonly id: FieldRef<"Produto", 'Int'>
+    readonly nome: FieldRef<"Produto", 'String'>
+    readonly tipo: FieldRef<"Produto", 'String'>
+    readonly preco: FieldRef<"Produto", 'Float'>
+    readonly petId: FieldRef<"Produto", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * produto findUnique
+   * Produto findUnique
    */
-  export type produtoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * Filter, which produto to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: produtoWhereUniqueInput
+    include?: ProdutoInclude<ExtArgs> | null
+    /**
+     * Filter, which Produto to fetch.
+     */
+    where: ProdutoWhereUniqueInput
   }
 
   /**
-   * produto findUniqueOrThrow
+   * Produto findUniqueOrThrow
    */
-  export type produtoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * Filter, which produto to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: produtoWhereUniqueInput
+    include?: ProdutoInclude<ExtArgs> | null
+    /**
+     * Filter, which Produto to fetch.
+     */
+    where: ProdutoWhereUniqueInput
   }
 
   /**
-   * produto findFirst
+   * Produto findFirst
    */
-  export type produtoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * Filter, which produto to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: produtoWhereInput
+    include?: ProdutoInclude<ExtArgs> | null
+    /**
+     * Filter, which Produto to fetch.
+     */
+    where?: ProdutoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of produtos to fetch.
+     * Determine the order of Produtos to fetch.
      */
-    orderBy?: produtoOrderByWithRelationInput | produtoOrderByWithRelationInput[]
+    orderBy?: ProdutoOrderByWithRelationInput | ProdutoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for produtos.
+     * Sets the position for searching for Produtos.
      */
-    cursor?: produtoWhereUniqueInput
+    cursor?: ProdutoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` produtos from the position of the cursor.
+     * Take `±n` Produtos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` produtos.
+     * Skip the first `n` Produtos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of produtos.
+     * Filter by unique combinations of Produtos.
      */
     distinct?: ProdutoScalarFieldEnum | ProdutoScalarFieldEnum[]
   }
 
   /**
-   * produto findFirstOrThrow
+   * Produto findFirstOrThrow
    */
-  export type produtoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * Filter, which produto to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: produtoWhereInput
+    include?: ProdutoInclude<ExtArgs> | null
+    /**
+     * Filter, which Produto to fetch.
+     */
+    where?: ProdutoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of produtos to fetch.
+     * Determine the order of Produtos to fetch.
      */
-    orderBy?: produtoOrderByWithRelationInput | produtoOrderByWithRelationInput[]
+    orderBy?: ProdutoOrderByWithRelationInput | ProdutoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for produtos.
+     * Sets the position for searching for Produtos.
      */
-    cursor?: produtoWhereUniqueInput
+    cursor?: ProdutoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` produtos from the position of the cursor.
+     * Take `±n` Produtos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` produtos.
+     * Skip the first `n` Produtos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of produtos.
+     * Filter by unique combinations of Produtos.
      */
     distinct?: ProdutoScalarFieldEnum | ProdutoScalarFieldEnum[]
   }
 
   /**
-   * produto findMany
+   * Produto findMany
    */
-  export type produtoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * Filter, which produtos to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: produtoWhereInput
+    include?: ProdutoInclude<ExtArgs> | null
+    /**
+     * Filter, which Produtos to fetch.
+     */
+    where?: ProdutoWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of produtos to fetch.
+     * Determine the order of Produtos to fetch.
      */
-    orderBy?: produtoOrderByWithRelationInput | produtoOrderByWithRelationInput[]
+    orderBy?: ProdutoOrderByWithRelationInput | ProdutoOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing produtos.
+     * Sets the position for listing Produtos.
      */
-    cursor?: produtoWhereUniqueInput
+    cursor?: ProdutoWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` produtos from the position of the cursor.
+     * Take `±n` Produtos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` produtos.
+     * Skip the first `n` Produtos.
      */
     skip?: number
     distinct?: ProdutoScalarFieldEnum | ProdutoScalarFieldEnum[]
   }
 
   /**
-   * produto create
+   * Produto create
    */
-  export type produtoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * The data needed to create a produto.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<produtoCreateInput, produtoUncheckedCreateInput>
+    include?: ProdutoInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Produto.
+     */
+    data: XOR<ProdutoCreateInput, ProdutoUncheckedCreateInput>
   }
 
   /**
-   * produto createMany
+   * Produto createMany
    */
-  export type produtoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many produtos.
+     * The data used to create many Produtos.
      */
-    data: produtoCreateManyInput | produtoCreateManyInput[]
+    data: ProdutoCreateManyInput | ProdutoCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * produto update
+   * Produto update
    */
-  export type produtoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * The data needed to update a produto.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<produtoUpdateInput, produtoUncheckedUpdateInput>
+    include?: ProdutoInclude<ExtArgs> | null
     /**
-     * Choose, which produto to update.
+     * The data needed to update a Produto.
      */
-    where: produtoWhereUniqueInput
+    data: XOR<ProdutoUpdateInput, ProdutoUncheckedUpdateInput>
+    /**
+     * Choose, which Produto to update.
+     */
+    where: ProdutoWhereUniqueInput
   }
 
   /**
-   * produto updateMany
+   * Produto updateMany
    */
-  export type produtoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update produtos.
+     * The data used to update Produtos.
      */
-    data: XOR<produtoUpdateManyMutationInput, produtoUncheckedUpdateManyInput>
+    data: XOR<ProdutoUpdateManyMutationInput, ProdutoUncheckedUpdateManyInput>
     /**
-     * Filter which produtos to update
+     * Filter which Produtos to update
      */
-    where?: produtoWhereInput
+    where?: ProdutoWhereInput
     /**
-     * Limit how many produtos to update.
+     * Limit how many Produtos to update.
      */
     limit?: number
   }
 
   /**
-   * produto upsert
+   * Produto upsert
    */
-  export type produtoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * The filter to search for the produto to update in case it exists.
+     * Choose, which related nodes to fetch as well
      */
-    where: produtoWhereUniqueInput
+    include?: ProdutoInclude<ExtArgs> | null
     /**
-     * In case the produto found by the `where` argument doesn't exist, create a new produto with this data.
+     * The filter to search for the Produto to update in case it exists.
      */
-    create: XOR<produtoCreateInput, produtoUncheckedCreateInput>
+    where: ProdutoWhereUniqueInput
     /**
-     * In case the produto was found with the provided `where` argument, update it with this data.
+     * In case the Produto found by the `where` argument doesn't exist, create a new Produto with this data.
      */
-    update: XOR<produtoUpdateInput, produtoUncheckedUpdateInput>
+    create: XOR<ProdutoCreateInput, ProdutoUncheckedCreateInput>
+    /**
+     * In case the Produto was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProdutoUpdateInput, ProdutoUncheckedUpdateInput>
   }
 
   /**
-   * produto delete
+   * Produto delete
    */
-  export type produtoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * Filter which produto to delete.
+     * Choose, which related nodes to fetch as well
      */
-    where: produtoWhereUniqueInput
+    include?: ProdutoInclude<ExtArgs> | null
+    /**
+     * Filter which Produto to delete.
+     */
+    where: ProdutoWhereUniqueInput
   }
 
   /**
-   * produto deleteMany
+   * Produto deleteMany
    */
-  export type produtoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which produtos to delete
+     * Filter which Produtos to delete
      */
-    where?: produtoWhereInput
+    where?: ProdutoWhereInput
     /**
-     * Limit how many produtos to delete.
+     * Limit how many Produtos to delete.
      */
     limit?: number
   }
 
   /**
-   * produto without action
+   * Produto without action
    */
-  export type produtoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ProdutoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the produto
+     * Select specific fields to fetch from the Produto
      */
-    select?: produtoSelect<ExtArgs> | null
+    select?: ProdutoSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the produto
+     * Omit specific fields from the Produto
      */
-    omit?: produtoOmit<ExtArgs> | null
-  }
-
-
-  /**
-   * Model user
-   */
-
-  export type AggregateUser = {
-    _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
-    _min: UserMinAggregateOutputType | null
-    _max: UserMaxAggregateOutputType | null
-  }
-
-  export type UserAvgAggregateOutputType = {
-    id: number | null
-  }
-
-  export type UserSumAggregateOutputType = {
-    id: number | null
-  }
-
-  export type UserMinAggregateOutputType = {
-    id: number | null
-    name: string | null
-    email: string | null
-    password: string | null
-  }
-
-  export type UserMaxAggregateOutputType = {
-    id: number | null
-    name: string | null
-    email: string | null
-    password: string | null
-  }
-
-  export type UserCountAggregateOutputType = {
-    id: number
-    name: number
-    email: number
-    password: number
-    _all: number
-  }
-
-
-  export type UserAvgAggregateInputType = {
-    id?: true
-  }
-
-  export type UserSumAggregateInputType = {
-    id?: true
-  }
-
-  export type UserMinAggregateInputType = {
-    id?: true
-    name?: true
-    email?: true
-    password?: true
-  }
-
-  export type UserMaxAggregateInputType = {
-    id?: true
-    name?: true
-    email?: true
-    password?: true
-  }
-
-  export type UserCountAggregateInputType = {
-    id?: true
-    name?: true
-    email?: true
-    password?: true
-    _all?: true
-  }
-
-  export type UserAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    omit?: ProdutoOmit<ExtArgs> | null
     /**
-     * Filter which user to aggregate.
+     * Choose, which related nodes to fetch as well
      */
-    where?: userWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of users to fetch.
-     */
-    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: userWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned users
-    **/
-    _count?: true | UserCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to average
-    **/
-    _avg?: UserAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: UserSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: UserMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: UserMaxAggregateInputType
-  }
-
-  export type GetUserAggregateType<T extends UserAggregateArgs> = {
-        [P in keyof T & keyof AggregateUser]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateUser[P]>
-      : GetScalarType<T[P], AggregateUser[P]>
-  }
-
-
-
-
-  export type userGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: userWhereInput
-    orderBy?: userOrderByWithAggregationInput | userOrderByWithAggregationInput[]
-    by: UserScalarFieldEnum[] | UserScalarFieldEnum
-    having?: userScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: UserCountAggregateInputType | true
-    _avg?: UserAvgAggregateInputType
-    _sum?: UserSumAggregateInputType
-    _min?: UserMinAggregateInputType
-    _max?: UserMaxAggregateInputType
-  }
-
-  export type UserGroupByOutputType = {
-    id: number
-    name: string
-    email: string
-    password: string
-    _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
-    _min: UserMinAggregateOutputType | null
-    _max: UserMaxAggregateOutputType | null
-  }
-
-  type GetUserGroupByPayload<T extends userGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<UserGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof UserGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], UserGroupByOutputType[P]>
-            : GetScalarType<T[P], UserGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type userSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    email?: boolean
-    password?: boolean
-  }, ExtArgs["result"]["user"]>
-
-
-
-  export type userSelectScalar = {
-    id?: boolean
-    name?: boolean
-    email?: boolean
-    password?: boolean
-  }
-
-  export type userOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "password", ExtArgs["result"]["user"]>
-
-  export type $userPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "user"
-    objects: {}
-    scalars: $Extensions.GetPayloadResult<{
-      id: number
-      name: string
-      email: string
-      password: string
-    }, ExtArgs["result"]["user"]>
-    composites: {}
-  }
-
-  type userGetPayload<S extends boolean | null | undefined | userDefaultArgs> = $Result.GetResult<Prisma.$userPayload, S>
-
-  type userCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<userFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: UserCountAggregateInputType | true
-    }
-
-  export interface userDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['user'], meta: { name: 'user' } }
-    /**
-     * Find zero or one User that matches the filter.
-     * @param {userFindUniqueArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends userFindUniqueArgs>(args: SelectSubset<T, userFindUniqueArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one User that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {userFindUniqueOrThrowArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends userFindUniqueOrThrowArgs>(args: SelectSubset<T, userFindUniqueOrThrowArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first User that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {userFindFirstArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends userFindFirstArgs>(args?: SelectSubset<T, userFindFirstArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first User that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {userFindFirstOrThrowArgs} args - Arguments to find a User
-     * @example
-     * // Get one User
-     * const user = await prisma.user.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends userFindFirstOrThrowArgs>(args?: SelectSubset<T, userFindFirstOrThrowArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more Users that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {userFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all Users
-     * const users = await prisma.user.findMany()
-     * 
-     * // Get first 10 Users
-     * const users = await prisma.user.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const userWithIdOnly = await prisma.user.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends userFindManyArgs>(args?: SelectSubset<T, userFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a User.
-     * @param {userCreateArgs} args - Arguments to create a User.
-     * @example
-     * // Create one User
-     * const User = await prisma.user.create({
-     *   data: {
-     *     // ... data to create a User
-     *   }
-     * })
-     * 
-     */
-    create<T extends userCreateArgs>(args: SelectSubset<T, userCreateArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many Users.
-     * @param {userCreateManyArgs} args - Arguments to create many Users.
-     * @example
-     * // Create many Users
-     * const user = await prisma.user.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends userCreateManyArgs>(args?: SelectSubset<T, userCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Delete a User.
-     * @param {userDeleteArgs} args - Arguments to delete one User.
-     * @example
-     * // Delete one User
-     * const User = await prisma.user.delete({
-     *   where: {
-     *     // ... filter to delete one User
-     *   }
-     * })
-     * 
-     */
-    delete<T extends userDeleteArgs>(args: SelectSubset<T, userDeleteArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one User.
-     * @param {userUpdateArgs} args - Arguments to update one User.
-     * @example
-     * // Update one User
-     * const user = await prisma.user.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends userUpdateArgs>(args: SelectSubset<T, userUpdateArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more Users.
-     * @param {userDeleteManyArgs} args - Arguments to filter Users to delete.
-     * @example
-     * // Delete a few Users
-     * const { count } = await prisma.user.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends userDeleteManyArgs>(args?: SelectSubset<T, userDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more Users.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {userUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many Users
-     * const user = await prisma.user.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends userUpdateManyArgs>(args: SelectSubset<T, userUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create or update one User.
-     * @param {userUpsertArgs} args - Arguments to update or create a User.
-     * @example
-     * // Update or create a User
-     * const user = await prisma.user.upsert({
-     *   create: {
-     *     // ... data to create a User
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the User we want to update
-     *   }
-     * })
-     */
-    upsert<T extends userUpsertArgs>(args: SelectSubset<T, userUpsertArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of Users.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {userCountArgs} args - Arguments to filter Users to count.
-     * @example
-     * // Count the number of Users
-     * const count = await prisma.user.count({
-     *   where: {
-     *     // ... the filter for the Users we want to count
-     *   }
-     * })
-    **/
-    count<T extends userCountArgs>(
-      args?: Subset<T, userCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], UserCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a User.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {UserAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends UserAggregateArgs>(args: Subset<T, UserAggregateArgs>): Prisma.PrismaPromise<GetUserAggregateType<T>>
-
-    /**
-     * Group by User.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {userGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends userGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: userGroupByArgs['orderBy'] }
-        : { orderBy?: userGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, userGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUserGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the user model
-   */
-  readonly fields: userFieldRefs;
-  }
-
-  /**
-   * The delegate class that acts as a "Promise-like" for user.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
-   */
-  export interface Prisma__userClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
-     */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
-    /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
-     */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the user model
-   */
-  interface userFieldRefs {
-    readonly id: FieldRef<"user", 'Int'>
-    readonly name: FieldRef<"user", 'String'>
-    readonly email: FieldRef<"user", 'String'>
-    readonly password: FieldRef<"user", 'String'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * user findUnique
-   */
-  export type userFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * Filter, which user to fetch.
-     */
-    where: userWhereUniqueInput
-  }
-
-  /**
-   * user findUniqueOrThrow
-   */
-  export type userFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * Filter, which user to fetch.
-     */
-    where: userWhereUniqueInput
-  }
-
-  /**
-   * user findFirst
-   */
-  export type userFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * Filter, which user to fetch.
-     */
-    where?: userWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of users to fetch.
-     */
-    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for users.
-     */
-    cursor?: userWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of users.
-     */
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * user findFirstOrThrow
-   */
-  export type userFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * Filter, which user to fetch.
-     */
-    where?: userWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of users to fetch.
-     */
-    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for users.
-     */
-    cursor?: userWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` users.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of users.
-     */
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * user findMany
-   */
-  export type userFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * Filter, which users to fetch.
-     */
-    where?: userWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of users to fetch.
-     */
-    orderBy?: userOrderByWithRelationInput | userOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing users.
-     */
-    cursor?: userWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` users from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` users.
-     */
-    skip?: number
-    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
-  }
-
-  /**
-   * user create
-   */
-  export type userCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * The data needed to create a user.
-     */
-    data: XOR<userCreateInput, userUncheckedCreateInput>
-  }
-
-  /**
-   * user createMany
-   */
-  export type userCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many users.
-     */
-    data: userCreateManyInput | userCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * user update
-   */
-  export type userUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * The data needed to update a user.
-     */
-    data: XOR<userUpdateInput, userUncheckedUpdateInput>
-    /**
-     * Choose, which user to update.
-     */
-    where: userWhereUniqueInput
-  }
-
-  /**
-   * user updateMany
-   */
-  export type userUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update users.
-     */
-    data: XOR<userUpdateManyMutationInput, userUncheckedUpdateManyInput>
-    /**
-     * Filter which users to update
-     */
-    where?: userWhereInput
-    /**
-     * Limit how many users to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * user upsert
-   */
-  export type userUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * The filter to search for the user to update in case it exists.
-     */
-    where: userWhereUniqueInput
-    /**
-     * In case the user found by the `where` argument doesn't exist, create a new user with this data.
-     */
-    create: XOR<userCreateInput, userUncheckedCreateInput>
-    /**
-     * In case the user was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<userUpdateInput, userUncheckedUpdateInput>
-  }
-
-  /**
-   * user delete
-   */
-  export type userDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * Filter which user to delete.
-     */
-    where: userWhereUniqueInput
-  }
-
-  /**
-   * user deleteMany
-   */
-  export type userDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which users to delete
-     */
-    where?: userWhereInput
-    /**
-     * Limit how many users to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * user without action
-   */
-  export type userDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
+    include?: ProdutoInclude<ExtArgs> | null
   }
 
 
@@ -3756,11 +4037,21 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+  export const UsuarioScalarFieldEnum: {
+    id: 'id',
+    nome: 'nome',
+    email: 'email',
+    senha: 'senha'
+  };
+
+  export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum]
+
+
   export const PetScalarFieldEnum: {
     id: 'id',
-    DonoNome: 'DonoNome',
-    NomePet: 'NomePet',
-    raca: 'raca'
+    nome: 'nome',
+    raca: 'raca',
+    usuarioId: 'usuarioId'
   };
 
   export type PetScalarFieldEnum = (typeof PetScalarFieldEnum)[keyof typeof PetScalarFieldEnum]
@@ -3768,22 +4059,13 @@ export namespace Prisma {
 
   export const ProdutoScalarFieldEnum: {
     id: 'id',
-    name: 'name',
+    nome: 'nome',
     tipo: 'tipo',
-    preco: 'preco'
+    preco: 'preco',
+    petId: 'petId'
   };
 
   export type ProdutoScalarFieldEnum = (typeof ProdutoScalarFieldEnum)[keyof typeof ProdutoScalarFieldEnum]
-
-
-  export const UserScalarFieldEnum: {
-    id: 'id',
-    name: 'name',
-    email: 'email',
-    password: 'password'
-  };
-
-  export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3794,31 +4076,29 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-  export const petOrderByRelevanceFieldEnum: {
-    DonoNome: 'DonoNome',
-    NomePet: 'NomePet',
+  export const UsuarioOrderByRelevanceFieldEnum: {
+    nome: 'nome',
+    email: 'email',
+    senha: 'senha'
+  };
+
+  export type UsuarioOrderByRelevanceFieldEnum = (typeof UsuarioOrderByRelevanceFieldEnum)[keyof typeof UsuarioOrderByRelevanceFieldEnum]
+
+
+  export const PetOrderByRelevanceFieldEnum: {
+    nome: 'nome',
     raca: 'raca'
   };
 
-  export type petOrderByRelevanceFieldEnum = (typeof petOrderByRelevanceFieldEnum)[keyof typeof petOrderByRelevanceFieldEnum]
+  export type PetOrderByRelevanceFieldEnum = (typeof PetOrderByRelevanceFieldEnum)[keyof typeof PetOrderByRelevanceFieldEnum]
 
 
-  export const produtoOrderByRelevanceFieldEnum: {
-    name: 'name',
-    tipo: 'tipo',
-    preco: 'preco'
+  export const ProdutoOrderByRelevanceFieldEnum: {
+    nome: 'nome',
+    tipo: 'tipo'
   };
 
-  export type produtoOrderByRelevanceFieldEnum = (typeof produtoOrderByRelevanceFieldEnum)[keyof typeof produtoOrderByRelevanceFieldEnum]
-
-
-  export const userOrderByRelevanceFieldEnum: {
-    name: 'name',
-    email: 'email',
-    password: 'password'
-  };
-
-  export type userOrderByRelevanceFieldEnum = (typeof userOrderByRelevanceFieldEnum)[keyof typeof userOrderByRelevanceFieldEnum]
+  export type ProdutoOrderByRelevanceFieldEnum = (typeof ProdutoOrderByRelevanceFieldEnum)[keyof typeof ProdutoOrderByRelevanceFieldEnum]
 
 
   /**
@@ -3850,292 +4130,322 @@ export namespace Prisma {
    */
 
 
-  export type petWhereInput = {
-    AND?: petWhereInput | petWhereInput[]
-    OR?: petWhereInput[]
-    NOT?: petWhereInput | petWhereInput[]
-    id?: IntFilter<"pet"> | number
-    DonoNome?: StringFilter<"pet"> | string
-    NomePet?: StringFilter<"pet"> | string
-    raca?: StringFilter<"pet"> | string
+  export type UsuarioWhereInput = {
+    AND?: UsuarioWhereInput | UsuarioWhereInput[]
+    OR?: UsuarioWhereInput[]
+    NOT?: UsuarioWhereInput | UsuarioWhereInput[]
+    id?: IntFilter<"Usuario"> | number
+    nome?: StringFilter<"Usuario"> | string
+    email?: StringFilter<"Usuario"> | string
+    senha?: StringFilter<"Usuario"> | string
+    pets?: PetListRelationFilter
   }
 
-  export type petOrderByWithRelationInput = {
+  export type UsuarioOrderByWithRelationInput = {
     id?: SortOrder
-    DonoNome?: SortOrder
-    NomePet?: SortOrder
-    raca?: SortOrder
-    _relevance?: petOrderByRelevanceInput
+    nome?: SortOrder
+    email?: SortOrder
+    senha?: SortOrder
+    pets?: PetOrderByRelationAggregateInput
+    _relevance?: UsuarioOrderByRelevanceInput
   }
 
-  export type petWhereUniqueInput = Prisma.AtLeast<{
+  export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: petWhereInput | petWhereInput[]
-    OR?: petWhereInput[]
-    NOT?: petWhereInput | petWhereInput[]
-    DonoNome?: StringFilter<"pet"> | string
-    NomePet?: StringFilter<"pet"> | string
-    raca?: StringFilter<"pet"> | string
+    email?: string
+    AND?: UsuarioWhereInput | UsuarioWhereInput[]
+    OR?: UsuarioWhereInput[]
+    NOT?: UsuarioWhereInput | UsuarioWhereInput[]
+    nome?: StringFilter<"Usuario"> | string
+    senha?: StringFilter<"Usuario"> | string
+    pets?: PetListRelationFilter
+  }, "id" | "email">
+
+  export type UsuarioOrderByWithAggregationInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    email?: SortOrder
+    senha?: SortOrder
+    _count?: UsuarioCountOrderByAggregateInput
+    _avg?: UsuarioAvgOrderByAggregateInput
+    _max?: UsuarioMaxOrderByAggregateInput
+    _min?: UsuarioMinOrderByAggregateInput
+    _sum?: UsuarioSumOrderByAggregateInput
+  }
+
+  export type UsuarioScalarWhereWithAggregatesInput = {
+    AND?: UsuarioScalarWhereWithAggregatesInput | UsuarioScalarWhereWithAggregatesInput[]
+    OR?: UsuarioScalarWhereWithAggregatesInput[]
+    NOT?: UsuarioScalarWhereWithAggregatesInput | UsuarioScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Usuario"> | number
+    nome?: StringWithAggregatesFilter<"Usuario"> | string
+    email?: StringWithAggregatesFilter<"Usuario"> | string
+    senha?: StringWithAggregatesFilter<"Usuario"> | string
+  }
+
+  export type PetWhereInput = {
+    AND?: PetWhereInput | PetWhereInput[]
+    OR?: PetWhereInput[]
+    NOT?: PetWhereInput | PetWhereInput[]
+    id?: IntFilter<"Pet"> | number
+    nome?: StringFilter<"Pet"> | string
+    raca?: StringFilter<"Pet"> | string
+    usuarioId?: IntFilter<"Pet"> | number
+    usuarioRel?: XOR<UsuarioScalarRelationFilter, UsuarioWhereInput>
+    produtos?: ProdutoListRelationFilter
+  }
+
+  export type PetOrderByWithRelationInput = {
+    id?: SortOrder
+    nome?: SortOrder
+    raca?: SortOrder
+    usuarioId?: SortOrder
+    usuarioRel?: UsuarioOrderByWithRelationInput
+    produtos?: ProdutoOrderByRelationAggregateInput
+    _relevance?: PetOrderByRelevanceInput
+  }
+
+  export type PetWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: PetWhereInput | PetWhereInput[]
+    OR?: PetWhereInput[]
+    NOT?: PetWhereInput | PetWhereInput[]
+    nome?: StringFilter<"Pet"> | string
+    raca?: StringFilter<"Pet"> | string
+    usuarioId?: IntFilter<"Pet"> | number
+    usuarioRel?: XOR<UsuarioScalarRelationFilter, UsuarioWhereInput>
+    produtos?: ProdutoListRelationFilter
   }, "id">
 
-  export type petOrderByWithAggregationInput = {
+  export type PetOrderByWithAggregationInput = {
     id?: SortOrder
-    DonoNome?: SortOrder
-    NomePet?: SortOrder
+    nome?: SortOrder
     raca?: SortOrder
-    _count?: petCountOrderByAggregateInput
-    _avg?: petAvgOrderByAggregateInput
-    _max?: petMaxOrderByAggregateInput
-    _min?: petMinOrderByAggregateInput
-    _sum?: petSumOrderByAggregateInput
+    usuarioId?: SortOrder
+    _count?: PetCountOrderByAggregateInput
+    _avg?: PetAvgOrderByAggregateInput
+    _max?: PetMaxOrderByAggregateInput
+    _min?: PetMinOrderByAggregateInput
+    _sum?: PetSumOrderByAggregateInput
   }
 
-  export type petScalarWhereWithAggregatesInput = {
-    AND?: petScalarWhereWithAggregatesInput | petScalarWhereWithAggregatesInput[]
-    OR?: petScalarWhereWithAggregatesInput[]
-    NOT?: petScalarWhereWithAggregatesInput | petScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"pet"> | number
-    DonoNome?: StringWithAggregatesFilter<"pet"> | string
-    NomePet?: StringWithAggregatesFilter<"pet"> | string
-    raca?: StringWithAggregatesFilter<"pet"> | string
+  export type PetScalarWhereWithAggregatesInput = {
+    AND?: PetScalarWhereWithAggregatesInput | PetScalarWhereWithAggregatesInput[]
+    OR?: PetScalarWhereWithAggregatesInput[]
+    NOT?: PetScalarWhereWithAggregatesInput | PetScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Pet"> | number
+    nome?: StringWithAggregatesFilter<"Pet"> | string
+    raca?: StringWithAggregatesFilter<"Pet"> | string
+    usuarioId?: IntWithAggregatesFilter<"Pet"> | number
   }
 
-  export type produtoWhereInput = {
-    AND?: produtoWhereInput | produtoWhereInput[]
-    OR?: produtoWhereInput[]
-    NOT?: produtoWhereInput | produtoWhereInput[]
-    id?: IntFilter<"produto"> | number
-    name?: StringFilter<"produto"> | string
-    tipo?: StringFilter<"produto"> | string
-    preco?: StringFilter<"produto"> | string
+  export type ProdutoWhereInput = {
+    AND?: ProdutoWhereInput | ProdutoWhereInput[]
+    OR?: ProdutoWhereInput[]
+    NOT?: ProdutoWhereInput | ProdutoWhereInput[]
+    id?: IntFilter<"Produto"> | number
+    nome?: StringFilter<"Produto"> | string
+    tipo?: StringFilter<"Produto"> | string
+    preco?: FloatFilter<"Produto"> | number
+    petId?: IntFilter<"Produto"> | number
+    petRel?: XOR<PetScalarRelationFilter, PetWhereInput>
   }
 
-  export type produtoOrderByWithRelationInput = {
+  export type ProdutoOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
+    nome?: SortOrder
     tipo?: SortOrder
     preco?: SortOrder
-    _relevance?: produtoOrderByRelevanceInput
+    petId?: SortOrder
+    petRel?: PetOrderByWithRelationInput
+    _relevance?: ProdutoOrderByRelevanceInput
   }
 
-  export type produtoWhereUniqueInput = Prisma.AtLeast<{
+  export type ProdutoWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: produtoWhereInput | produtoWhereInput[]
-    OR?: produtoWhereInput[]
-    NOT?: produtoWhereInput | produtoWhereInput[]
-    name?: StringFilter<"produto"> | string
-    tipo?: StringFilter<"produto"> | string
-    preco?: StringFilter<"produto"> | string
+    AND?: ProdutoWhereInput | ProdutoWhereInput[]
+    OR?: ProdutoWhereInput[]
+    NOT?: ProdutoWhereInput | ProdutoWhereInput[]
+    nome?: StringFilter<"Produto"> | string
+    tipo?: StringFilter<"Produto"> | string
+    preco?: FloatFilter<"Produto"> | number
+    petId?: IntFilter<"Produto"> | number
+    petRel?: XOR<PetScalarRelationFilter, PetWhereInput>
   }, "id">
 
-  export type produtoOrderByWithAggregationInput = {
+  export type ProdutoOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
+    nome?: SortOrder
     tipo?: SortOrder
     preco?: SortOrder
-    _count?: produtoCountOrderByAggregateInput
-    _avg?: produtoAvgOrderByAggregateInput
-    _max?: produtoMaxOrderByAggregateInput
-    _min?: produtoMinOrderByAggregateInput
-    _sum?: produtoSumOrderByAggregateInput
+    petId?: SortOrder
+    _count?: ProdutoCountOrderByAggregateInput
+    _avg?: ProdutoAvgOrderByAggregateInput
+    _max?: ProdutoMaxOrderByAggregateInput
+    _min?: ProdutoMinOrderByAggregateInput
+    _sum?: ProdutoSumOrderByAggregateInput
   }
 
-  export type produtoScalarWhereWithAggregatesInput = {
-    AND?: produtoScalarWhereWithAggregatesInput | produtoScalarWhereWithAggregatesInput[]
-    OR?: produtoScalarWhereWithAggregatesInput[]
-    NOT?: produtoScalarWhereWithAggregatesInput | produtoScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"produto"> | number
-    name?: StringWithAggregatesFilter<"produto"> | string
-    tipo?: StringWithAggregatesFilter<"produto"> | string
-    preco?: StringWithAggregatesFilter<"produto"> | string
+  export type ProdutoScalarWhereWithAggregatesInput = {
+    AND?: ProdutoScalarWhereWithAggregatesInput | ProdutoScalarWhereWithAggregatesInput[]
+    OR?: ProdutoScalarWhereWithAggregatesInput[]
+    NOT?: ProdutoScalarWhereWithAggregatesInput | ProdutoScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Produto"> | number
+    nome?: StringWithAggregatesFilter<"Produto"> | string
+    tipo?: StringWithAggregatesFilter<"Produto"> | string
+    preco?: FloatWithAggregatesFilter<"Produto"> | number
+    petId?: IntWithAggregatesFilter<"Produto"> | number
   }
 
-  export type userWhereInput = {
-    AND?: userWhereInput | userWhereInput[]
-    OR?: userWhereInput[]
-    NOT?: userWhereInput | userWhereInput[]
-    id?: IntFilter<"user"> | number
-    name?: StringFilter<"user"> | string
-    email?: StringFilter<"user"> | string
-    password?: StringFilter<"user"> | string
-  }
-
-  export type userOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    _relevance?: userOrderByRelevanceInput
-  }
-
-  export type userWhereUniqueInput = Prisma.AtLeast<{
-    id?: number
-    AND?: userWhereInput | userWhereInput[]
-    OR?: userWhereInput[]
-    NOT?: userWhereInput | userWhereInput[]
-    name?: StringFilter<"user"> | string
-    email?: StringFilter<"user"> | string
-    password?: StringFilter<"user"> | string
-  }, "id">
-
-  export type userOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
-    _count?: userCountOrderByAggregateInput
-    _avg?: userAvgOrderByAggregateInput
-    _max?: userMaxOrderByAggregateInput
-    _min?: userMinOrderByAggregateInput
-    _sum?: userSumOrderByAggregateInput
-  }
-
-  export type userScalarWhereWithAggregatesInput = {
-    AND?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
-    OR?: userScalarWhereWithAggregatesInput[]
-    NOT?: userScalarWhereWithAggregatesInput | userScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"user"> | number
-    name?: StringWithAggregatesFilter<"user"> | string
-    email?: StringWithAggregatesFilter<"user"> | string
-    password?: StringWithAggregatesFilter<"user"> | string
-  }
-
-  export type petCreateInput = {
-    DonoNome: string
-    NomePet: string
-    raca: string
-  }
-
-  export type petUncheckedCreateInput = {
-    id?: number
-    DonoNome: string
-    NomePet: string
-    raca: string
-  }
-
-  export type petUpdateInput = {
-    DonoNome?: StringFieldUpdateOperationsInput | string
-    NomePet?: StringFieldUpdateOperationsInput | string
-    raca?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type petUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    DonoNome?: StringFieldUpdateOperationsInput | string
-    NomePet?: StringFieldUpdateOperationsInput | string
-    raca?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type petCreateManyInput = {
-    id?: number
-    DonoNome: string
-    NomePet: string
-    raca: string
-  }
-
-  export type petUpdateManyMutationInput = {
-    DonoNome?: StringFieldUpdateOperationsInput | string
-    NomePet?: StringFieldUpdateOperationsInput | string
-    raca?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type petUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    DonoNome?: StringFieldUpdateOperationsInput | string
-    NomePet?: StringFieldUpdateOperationsInput | string
-    raca?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type produtoCreateInput = {
-    name: string
-    tipo: string
-    preco: string
-  }
-
-  export type produtoUncheckedCreateInput = {
-    id?: number
-    name: string
-    tipo: string
-    preco: string
-  }
-
-  export type produtoUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
-    preco?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type produtoUncheckedUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
-    preco?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type produtoCreateManyInput = {
-    id?: number
-    name: string
-    tipo: string
-    preco: string
-  }
-
-  export type produtoUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
-    preco?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type produtoUncheckedUpdateManyInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
-    tipo?: StringFieldUpdateOperationsInput | string
-    preco?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type userCreateInput = {
-    name: string
+  export type UsuarioCreateInput = {
+    nome: string
     email: string
-    password: string
+    senha: string
+    pets?: PetCreateNestedManyWithoutUsuarioRelInput
   }
 
-  export type userUncheckedCreateInput = {
+  export type UsuarioUncheckedCreateInput = {
     id?: number
-    name: string
+    nome: string
     email: string
-    password: string
+    senha: string
+    pets?: PetUncheckedCreateNestedManyWithoutUsuarioRelInput
   }
 
-  export type userUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
+  export type UsuarioUpdateInput = {
+    nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
+    pets?: PetUpdateManyWithoutUsuarioRelNestedInput
   }
 
-  export type userUncheckedUpdateInput = {
+  export type UsuarioUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
+    pets?: PetUncheckedUpdateManyWithoutUsuarioRelNestedInput
   }
 
-  export type userCreateManyInput = {
+  export type UsuarioCreateManyInput = {
     id?: number
-    name: string
+    nome: string
     email: string
-    password: string
+    senha: string
   }
 
-  export type userUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
+  export type UsuarioUpdateManyMutationInput = {
+    nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
   }
 
-  export type userUncheckedUpdateManyInput = {
+  export type UsuarioUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    password?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PetCreateInput = {
+    nome: string
+    raca: string
+    usuarioRel: UsuarioCreateNestedOneWithoutPetsInput
+    produtos?: ProdutoCreateNestedManyWithoutPetRelInput
+  }
+
+  export type PetUncheckedCreateInput = {
+    id?: number
+    nome: string
+    raca: string
+    usuarioId: number
+    produtos?: ProdutoUncheckedCreateNestedManyWithoutPetRelInput
+  }
+
+  export type PetUpdateInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+    usuarioRel?: UsuarioUpdateOneRequiredWithoutPetsNestedInput
+    produtos?: ProdutoUpdateManyWithoutPetRelNestedInput
+  }
+
+  export type PetUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+    usuarioId?: IntFieldUpdateOperationsInput | number
+    produtos?: ProdutoUncheckedUpdateManyWithoutPetRelNestedInput
+  }
+
+  export type PetCreateManyInput = {
+    id?: number
+    nome: string
+    raca: string
+    usuarioId: number
+  }
+
+  export type PetUpdateManyMutationInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type PetUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+    usuarioId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ProdutoCreateInput = {
+    nome: string
+    tipo: string
+    preco: number
+    petRel: PetCreateNestedOneWithoutProdutosInput
+  }
+
+  export type ProdutoUncheckedCreateInput = {
+    id?: number
+    nome: string
+    tipo: string
+    preco: number
+    petId: number
+  }
+
+  export type ProdutoUpdateInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    preco?: FloatFieldUpdateOperationsInput | number
+    petRel?: PetUpdateOneRequiredWithoutProdutosNestedInput
+  }
+
+  export type ProdutoUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    preco?: FloatFieldUpdateOperationsInput | number
+    petId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ProdutoCreateManyInput = {
+    id?: number
+    nome: string
+    tipo: string
+    preco: number
+    petId: number
+  }
+
+  export type ProdutoUpdateManyMutationInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    preco?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type ProdutoUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    preco?: FloatFieldUpdateOperationsInput | number
+    petId?: IntFieldUpdateOperationsInput | number
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -4164,38 +4474,48 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type petOrderByRelevanceInput = {
-    fields: petOrderByRelevanceFieldEnum | petOrderByRelevanceFieldEnum[]
+  export type PetListRelationFilter = {
+    every?: PetWhereInput
+    some?: PetWhereInput
+    none?: PetWhereInput
+  }
+
+  export type PetOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type UsuarioOrderByRelevanceInput = {
+    fields: UsuarioOrderByRelevanceFieldEnum | UsuarioOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type petCountOrderByAggregateInput = {
+  export type UsuarioCountOrderByAggregateInput = {
     id?: SortOrder
-    DonoNome?: SortOrder
-    NomePet?: SortOrder
-    raca?: SortOrder
+    nome?: SortOrder
+    email?: SortOrder
+    senha?: SortOrder
   }
 
-  export type petAvgOrderByAggregateInput = {
+  export type UsuarioAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type petMaxOrderByAggregateInput = {
+  export type UsuarioMaxOrderByAggregateInput = {
     id?: SortOrder
-    DonoNome?: SortOrder
-    NomePet?: SortOrder
-    raca?: SortOrder
+    nome?: SortOrder
+    email?: SortOrder
+    senha?: SortOrder
   }
 
-  export type petMinOrderByAggregateInput = {
+  export type UsuarioMinOrderByAggregateInput = {
     id?: SortOrder
-    DonoNome?: SortOrder
-    NomePet?: SortOrder
-    raca?: SortOrder
+    nome?: SortOrder
+    email?: SortOrder
+    senha?: SortOrder
   }
 
-  export type petSumOrderByAggregateInput = {
+  export type UsuarioSumOrderByAggregateInput = {
     id?: SortOrder
   }
 
@@ -4233,78 +4553,162 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type produtoOrderByRelevanceInput = {
-    fields: produtoOrderByRelevanceFieldEnum | produtoOrderByRelevanceFieldEnum[]
+  export type UsuarioScalarRelationFilter = {
+    is?: UsuarioWhereInput
+    isNot?: UsuarioWhereInput
+  }
+
+  export type ProdutoListRelationFilter = {
+    every?: ProdutoWhereInput
+    some?: ProdutoWhereInput
+    none?: ProdutoWhereInput
+  }
+
+  export type ProdutoOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type PetOrderByRelevanceInput = {
+    fields: PetOrderByRelevanceFieldEnum | PetOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type produtoCountOrderByAggregateInput = {
+  export type PetCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    tipo?: SortOrder
-    preco?: SortOrder
+    nome?: SortOrder
+    raca?: SortOrder
+    usuarioId?: SortOrder
   }
 
-  export type produtoAvgOrderByAggregateInput = {
+  export type PetAvgOrderByAggregateInput = {
     id?: SortOrder
+    usuarioId?: SortOrder
   }
 
-  export type produtoMaxOrderByAggregateInput = {
+  export type PetMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    tipo?: SortOrder
-    preco?: SortOrder
+    nome?: SortOrder
+    raca?: SortOrder
+    usuarioId?: SortOrder
   }
 
-  export type produtoMinOrderByAggregateInput = {
+  export type PetMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    tipo?: SortOrder
-    preco?: SortOrder
+    nome?: SortOrder
+    raca?: SortOrder
+    usuarioId?: SortOrder
   }
 
-  export type produtoSumOrderByAggregateInput = {
+  export type PetSumOrderByAggregateInput = {
     id?: SortOrder
+    usuarioId?: SortOrder
   }
 
-  export type userOrderByRelevanceInput = {
-    fields: userOrderByRelevanceFieldEnum | userOrderByRelevanceFieldEnum[]
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type PetScalarRelationFilter = {
+    is?: PetWhereInput
+    isNot?: PetWhereInput
+  }
+
+  export type ProdutoOrderByRelevanceInput = {
+    fields: ProdutoOrderByRelevanceFieldEnum | ProdutoOrderByRelevanceFieldEnum[]
     sort: SortOrder
     search: string
   }
 
-  export type userCountOrderByAggregateInput = {
+  export type ProdutoCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
+    nome?: SortOrder
+    tipo?: SortOrder
+    preco?: SortOrder
+    petId?: SortOrder
   }
 
-  export type userAvgOrderByAggregateInput = {
+  export type ProdutoAvgOrderByAggregateInput = {
     id?: SortOrder
+    preco?: SortOrder
+    petId?: SortOrder
   }
 
-  export type userMaxOrderByAggregateInput = {
+  export type ProdutoMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
+    nome?: SortOrder
+    tipo?: SortOrder
+    preco?: SortOrder
+    petId?: SortOrder
   }
 
-  export type userMinOrderByAggregateInput = {
+  export type ProdutoMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
-    email?: SortOrder
-    password?: SortOrder
+    nome?: SortOrder
+    tipo?: SortOrder
+    preco?: SortOrder
+    petId?: SortOrder
   }
 
-  export type userSumOrderByAggregateInput = {
+  export type ProdutoSumOrderByAggregateInput = {
     id?: SortOrder
+    preco?: SortOrder
+    petId?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type PetCreateNestedManyWithoutUsuarioRelInput = {
+    create?: XOR<PetCreateWithoutUsuarioRelInput, PetUncheckedCreateWithoutUsuarioRelInput> | PetCreateWithoutUsuarioRelInput[] | PetUncheckedCreateWithoutUsuarioRelInput[]
+    connectOrCreate?: PetCreateOrConnectWithoutUsuarioRelInput | PetCreateOrConnectWithoutUsuarioRelInput[]
+    createMany?: PetCreateManyUsuarioRelInputEnvelope
+    connect?: PetWhereUniqueInput | PetWhereUniqueInput[]
+  }
+
+  export type PetUncheckedCreateNestedManyWithoutUsuarioRelInput = {
+    create?: XOR<PetCreateWithoutUsuarioRelInput, PetUncheckedCreateWithoutUsuarioRelInput> | PetCreateWithoutUsuarioRelInput[] | PetUncheckedCreateWithoutUsuarioRelInput[]
+    connectOrCreate?: PetCreateOrConnectWithoutUsuarioRelInput | PetCreateOrConnectWithoutUsuarioRelInput[]
+    createMany?: PetCreateManyUsuarioRelInputEnvelope
+    connect?: PetWhereUniqueInput | PetWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type PetUpdateManyWithoutUsuarioRelNestedInput = {
+    create?: XOR<PetCreateWithoutUsuarioRelInput, PetUncheckedCreateWithoutUsuarioRelInput> | PetCreateWithoutUsuarioRelInput[] | PetUncheckedCreateWithoutUsuarioRelInput[]
+    connectOrCreate?: PetCreateOrConnectWithoutUsuarioRelInput | PetCreateOrConnectWithoutUsuarioRelInput[]
+    upsert?: PetUpsertWithWhereUniqueWithoutUsuarioRelInput | PetUpsertWithWhereUniqueWithoutUsuarioRelInput[]
+    createMany?: PetCreateManyUsuarioRelInputEnvelope
+    set?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    disconnect?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    delete?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    connect?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    update?: PetUpdateWithWhereUniqueWithoutUsuarioRelInput | PetUpdateWithWhereUniqueWithoutUsuarioRelInput[]
+    updateMany?: PetUpdateManyWithWhereWithoutUsuarioRelInput | PetUpdateManyWithWhereWithoutUsuarioRelInput[]
+    deleteMany?: PetScalarWhereInput | PetScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -4313,6 +4717,98 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type PetUncheckedUpdateManyWithoutUsuarioRelNestedInput = {
+    create?: XOR<PetCreateWithoutUsuarioRelInput, PetUncheckedCreateWithoutUsuarioRelInput> | PetCreateWithoutUsuarioRelInput[] | PetUncheckedCreateWithoutUsuarioRelInput[]
+    connectOrCreate?: PetCreateOrConnectWithoutUsuarioRelInput | PetCreateOrConnectWithoutUsuarioRelInput[]
+    upsert?: PetUpsertWithWhereUniqueWithoutUsuarioRelInput | PetUpsertWithWhereUniqueWithoutUsuarioRelInput[]
+    createMany?: PetCreateManyUsuarioRelInputEnvelope
+    set?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    disconnect?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    delete?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    connect?: PetWhereUniqueInput | PetWhereUniqueInput[]
+    update?: PetUpdateWithWhereUniqueWithoutUsuarioRelInput | PetUpdateWithWhereUniqueWithoutUsuarioRelInput[]
+    updateMany?: PetUpdateManyWithWhereWithoutUsuarioRelInput | PetUpdateManyWithWhereWithoutUsuarioRelInput[]
+    deleteMany?: PetScalarWhereInput | PetScalarWhereInput[]
+  }
+
+  export type UsuarioCreateNestedOneWithoutPetsInput = {
+    create?: XOR<UsuarioCreateWithoutPetsInput, UsuarioUncheckedCreateWithoutPetsInput>
+    connectOrCreate?: UsuarioCreateOrConnectWithoutPetsInput
+    connect?: UsuarioWhereUniqueInput
+  }
+
+  export type ProdutoCreateNestedManyWithoutPetRelInput = {
+    create?: XOR<ProdutoCreateWithoutPetRelInput, ProdutoUncheckedCreateWithoutPetRelInput> | ProdutoCreateWithoutPetRelInput[] | ProdutoUncheckedCreateWithoutPetRelInput[]
+    connectOrCreate?: ProdutoCreateOrConnectWithoutPetRelInput | ProdutoCreateOrConnectWithoutPetRelInput[]
+    createMany?: ProdutoCreateManyPetRelInputEnvelope
+    connect?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+  }
+
+  export type ProdutoUncheckedCreateNestedManyWithoutPetRelInput = {
+    create?: XOR<ProdutoCreateWithoutPetRelInput, ProdutoUncheckedCreateWithoutPetRelInput> | ProdutoCreateWithoutPetRelInput[] | ProdutoUncheckedCreateWithoutPetRelInput[]
+    connectOrCreate?: ProdutoCreateOrConnectWithoutPetRelInput | ProdutoCreateOrConnectWithoutPetRelInput[]
+    createMany?: ProdutoCreateManyPetRelInputEnvelope
+    connect?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+  }
+
+  export type UsuarioUpdateOneRequiredWithoutPetsNestedInput = {
+    create?: XOR<UsuarioCreateWithoutPetsInput, UsuarioUncheckedCreateWithoutPetsInput>
+    connectOrCreate?: UsuarioCreateOrConnectWithoutPetsInput
+    upsert?: UsuarioUpsertWithoutPetsInput
+    connect?: UsuarioWhereUniqueInput
+    update?: XOR<XOR<UsuarioUpdateToOneWithWhereWithoutPetsInput, UsuarioUpdateWithoutPetsInput>, UsuarioUncheckedUpdateWithoutPetsInput>
+  }
+
+  export type ProdutoUpdateManyWithoutPetRelNestedInput = {
+    create?: XOR<ProdutoCreateWithoutPetRelInput, ProdutoUncheckedCreateWithoutPetRelInput> | ProdutoCreateWithoutPetRelInput[] | ProdutoUncheckedCreateWithoutPetRelInput[]
+    connectOrCreate?: ProdutoCreateOrConnectWithoutPetRelInput | ProdutoCreateOrConnectWithoutPetRelInput[]
+    upsert?: ProdutoUpsertWithWhereUniqueWithoutPetRelInput | ProdutoUpsertWithWhereUniqueWithoutPetRelInput[]
+    createMany?: ProdutoCreateManyPetRelInputEnvelope
+    set?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    disconnect?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    delete?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    connect?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    update?: ProdutoUpdateWithWhereUniqueWithoutPetRelInput | ProdutoUpdateWithWhereUniqueWithoutPetRelInput[]
+    updateMany?: ProdutoUpdateManyWithWhereWithoutPetRelInput | ProdutoUpdateManyWithWhereWithoutPetRelInput[]
+    deleteMany?: ProdutoScalarWhereInput | ProdutoScalarWhereInput[]
+  }
+
+  export type ProdutoUncheckedUpdateManyWithoutPetRelNestedInput = {
+    create?: XOR<ProdutoCreateWithoutPetRelInput, ProdutoUncheckedCreateWithoutPetRelInput> | ProdutoCreateWithoutPetRelInput[] | ProdutoUncheckedCreateWithoutPetRelInput[]
+    connectOrCreate?: ProdutoCreateOrConnectWithoutPetRelInput | ProdutoCreateOrConnectWithoutPetRelInput[]
+    upsert?: ProdutoUpsertWithWhereUniqueWithoutPetRelInput | ProdutoUpsertWithWhereUniqueWithoutPetRelInput[]
+    createMany?: ProdutoCreateManyPetRelInputEnvelope
+    set?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    disconnect?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    delete?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    connect?: ProdutoWhereUniqueInput | ProdutoWhereUniqueInput[]
+    update?: ProdutoUpdateWithWhereUniqueWithoutPetRelInput | ProdutoUpdateWithWhereUniqueWithoutPetRelInput[]
+    updateMany?: ProdutoUpdateManyWithWhereWithoutPetRelInput | ProdutoUpdateManyWithWhereWithoutPetRelInput[]
+    deleteMany?: ProdutoScalarWhereInput | ProdutoScalarWhereInput[]
+  }
+
+  export type PetCreateNestedOneWithoutProdutosInput = {
+    create?: XOR<PetCreateWithoutProdutosInput, PetUncheckedCreateWithoutProdutosInput>
+    connectOrCreate?: PetCreateOrConnectWithoutProdutosInput
+    connect?: PetWhereUniqueInput
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type PetUpdateOneRequiredWithoutProdutosNestedInput = {
+    create?: XOR<PetCreateWithoutProdutosInput, PetUncheckedCreateWithoutProdutosInput>
+    connectOrCreate?: PetCreateOrConnectWithoutProdutosInput
+    upsert?: PetUpsertWithoutProdutosInput
+    connect?: PetWhereUniqueInput
+    update?: XOR<XOR<PetUpdateToOneWithWhereWithoutProdutosInput, PetUpdateWithoutProdutosInput>, PetUncheckedUpdateWithoutProdutosInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -4384,6 +4880,257 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type PetCreateWithoutUsuarioRelInput = {
+    nome: string
+    raca: string
+    produtos?: ProdutoCreateNestedManyWithoutPetRelInput
+  }
+
+  export type PetUncheckedCreateWithoutUsuarioRelInput = {
+    id?: number
+    nome: string
+    raca: string
+    produtos?: ProdutoUncheckedCreateNestedManyWithoutPetRelInput
+  }
+
+  export type PetCreateOrConnectWithoutUsuarioRelInput = {
+    where: PetWhereUniqueInput
+    create: XOR<PetCreateWithoutUsuarioRelInput, PetUncheckedCreateWithoutUsuarioRelInput>
+  }
+
+  export type PetCreateManyUsuarioRelInputEnvelope = {
+    data: PetCreateManyUsuarioRelInput | PetCreateManyUsuarioRelInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type PetUpsertWithWhereUniqueWithoutUsuarioRelInput = {
+    where: PetWhereUniqueInput
+    update: XOR<PetUpdateWithoutUsuarioRelInput, PetUncheckedUpdateWithoutUsuarioRelInput>
+    create: XOR<PetCreateWithoutUsuarioRelInput, PetUncheckedCreateWithoutUsuarioRelInput>
+  }
+
+  export type PetUpdateWithWhereUniqueWithoutUsuarioRelInput = {
+    where: PetWhereUniqueInput
+    data: XOR<PetUpdateWithoutUsuarioRelInput, PetUncheckedUpdateWithoutUsuarioRelInput>
+  }
+
+  export type PetUpdateManyWithWhereWithoutUsuarioRelInput = {
+    where: PetScalarWhereInput
+    data: XOR<PetUpdateManyMutationInput, PetUncheckedUpdateManyWithoutUsuarioRelInput>
+  }
+
+  export type PetScalarWhereInput = {
+    AND?: PetScalarWhereInput | PetScalarWhereInput[]
+    OR?: PetScalarWhereInput[]
+    NOT?: PetScalarWhereInput | PetScalarWhereInput[]
+    id?: IntFilter<"Pet"> | number
+    nome?: StringFilter<"Pet"> | string
+    raca?: StringFilter<"Pet"> | string
+    usuarioId?: IntFilter<"Pet"> | number
+  }
+
+  export type UsuarioCreateWithoutPetsInput = {
+    nome: string
+    email: string
+    senha: string
+  }
+
+  export type UsuarioUncheckedCreateWithoutPetsInput = {
+    id?: number
+    nome: string
+    email: string
+    senha: string
+  }
+
+  export type UsuarioCreateOrConnectWithoutPetsInput = {
+    where: UsuarioWhereUniqueInput
+    create: XOR<UsuarioCreateWithoutPetsInput, UsuarioUncheckedCreateWithoutPetsInput>
+  }
+
+  export type ProdutoCreateWithoutPetRelInput = {
+    nome: string
+    tipo: string
+    preco: number
+  }
+
+  export type ProdutoUncheckedCreateWithoutPetRelInput = {
+    id?: number
+    nome: string
+    tipo: string
+    preco: number
+  }
+
+  export type ProdutoCreateOrConnectWithoutPetRelInput = {
+    where: ProdutoWhereUniqueInput
+    create: XOR<ProdutoCreateWithoutPetRelInput, ProdutoUncheckedCreateWithoutPetRelInput>
+  }
+
+  export type ProdutoCreateManyPetRelInputEnvelope = {
+    data: ProdutoCreateManyPetRelInput | ProdutoCreateManyPetRelInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type UsuarioUpsertWithoutPetsInput = {
+    update: XOR<UsuarioUpdateWithoutPetsInput, UsuarioUncheckedUpdateWithoutPetsInput>
+    create: XOR<UsuarioCreateWithoutPetsInput, UsuarioUncheckedCreateWithoutPetsInput>
+    where?: UsuarioWhereInput
+  }
+
+  export type UsuarioUpdateToOneWithWhereWithoutPetsInput = {
+    where?: UsuarioWhereInput
+    data: XOR<UsuarioUpdateWithoutPetsInput, UsuarioUncheckedUpdateWithoutPetsInput>
+  }
+
+  export type UsuarioUpdateWithoutPetsInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type UsuarioUncheckedUpdateWithoutPetsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProdutoUpsertWithWhereUniqueWithoutPetRelInput = {
+    where: ProdutoWhereUniqueInput
+    update: XOR<ProdutoUpdateWithoutPetRelInput, ProdutoUncheckedUpdateWithoutPetRelInput>
+    create: XOR<ProdutoCreateWithoutPetRelInput, ProdutoUncheckedCreateWithoutPetRelInput>
+  }
+
+  export type ProdutoUpdateWithWhereUniqueWithoutPetRelInput = {
+    where: ProdutoWhereUniqueInput
+    data: XOR<ProdutoUpdateWithoutPetRelInput, ProdutoUncheckedUpdateWithoutPetRelInput>
+  }
+
+  export type ProdutoUpdateManyWithWhereWithoutPetRelInput = {
+    where: ProdutoScalarWhereInput
+    data: XOR<ProdutoUpdateManyMutationInput, ProdutoUncheckedUpdateManyWithoutPetRelInput>
+  }
+
+  export type ProdutoScalarWhereInput = {
+    AND?: ProdutoScalarWhereInput | ProdutoScalarWhereInput[]
+    OR?: ProdutoScalarWhereInput[]
+    NOT?: ProdutoScalarWhereInput | ProdutoScalarWhereInput[]
+    id?: IntFilter<"Produto"> | number
+    nome?: StringFilter<"Produto"> | string
+    tipo?: StringFilter<"Produto"> | string
+    preco?: FloatFilter<"Produto"> | number
+    petId?: IntFilter<"Produto"> | number
+  }
+
+  export type PetCreateWithoutProdutosInput = {
+    nome: string
+    raca: string
+    usuarioRel: UsuarioCreateNestedOneWithoutPetsInput
+  }
+
+  export type PetUncheckedCreateWithoutProdutosInput = {
+    id?: number
+    nome: string
+    raca: string
+    usuarioId: number
+  }
+
+  export type PetCreateOrConnectWithoutProdutosInput = {
+    where: PetWhereUniqueInput
+    create: XOR<PetCreateWithoutProdutosInput, PetUncheckedCreateWithoutProdutosInput>
+  }
+
+  export type PetUpsertWithoutProdutosInput = {
+    update: XOR<PetUpdateWithoutProdutosInput, PetUncheckedUpdateWithoutProdutosInput>
+    create: XOR<PetCreateWithoutProdutosInput, PetUncheckedCreateWithoutProdutosInput>
+    where?: PetWhereInput
+  }
+
+  export type PetUpdateToOneWithWhereWithoutProdutosInput = {
+    where?: PetWhereInput
+    data: XOR<PetUpdateWithoutProdutosInput, PetUncheckedUpdateWithoutProdutosInput>
+  }
+
+  export type PetUpdateWithoutProdutosInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+    usuarioRel?: UsuarioUpdateOneRequiredWithoutPetsNestedInput
+  }
+
+  export type PetUncheckedUpdateWithoutProdutosInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+    usuarioId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type PetCreateManyUsuarioRelInput = {
+    id?: number
+    nome: string
+    raca: string
+  }
+
+  export type PetUpdateWithoutUsuarioRelInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+    produtos?: ProdutoUpdateManyWithoutPetRelNestedInput
+  }
+
+  export type PetUncheckedUpdateWithoutUsuarioRelInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+    produtos?: ProdutoUncheckedUpdateManyWithoutPetRelNestedInput
+  }
+
+  export type PetUncheckedUpdateManyWithoutUsuarioRelInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    raca?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProdutoCreateManyPetRelInput = {
+    id?: number
+    nome: string
+    tipo: string
+    preco: number
+  }
+
+  export type ProdutoUpdateWithoutPetRelInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    preco?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type ProdutoUncheckedUpdateWithoutPetRelInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    preco?: FloatFieldUpdateOperationsInput | number
+  }
+
+  export type ProdutoUncheckedUpdateManyWithoutPetRelInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    tipo?: StringFieldUpdateOperationsInput | string
+    preco?: FloatFieldUpdateOperationsInput | number
   }
 
 

@@ -1,14 +1,20 @@
-import {IsAlpha, Matches , IsString} from 'class-validator';
-export class CreateProdutoDto {
-  @Matches(/^[\p{L}\s]+$/u, {
-    message: 'por favor, insira apenas letras e espaços',
-  })
-  name: string;
-  @Matches(/^[\p{L}\s]+$/u, {
-    message: 'por favor, insira apenas letras e espaços',
-  })
-  tipo: string;
+import { IsNotEmpty, IsNumber, IsString, Min, IsOptional } from 'class-validator';
 
-  @Matches(/^[0-9.,:\$]+$/)
-  preco: string;
+export class CreateProdutoDto {
+    @IsNotEmpty()
+    @IsString()
+    nome: string;
+
+    @IsNotEmpty()
+    @IsString()
+    tipo: string;
+
+    @IsNotEmpty()
+    @IsNumber()
+    @Min(0)
+    preco: number;
+
+    @IsOptional()
+    @IsNumber()
+    petId?: number;
 }

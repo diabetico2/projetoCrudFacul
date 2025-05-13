@@ -6,13 +6,10 @@ export class UpdatePetDto extends PartialType(CreatePetDto) {
   @Matches(/^[\p{L}\s]+$/u, {
     message: 'por favor, insira apenas letras e espaços',
   })
-  DonoNome: string;
+  nome?: string;
+
   @Matches(/^[\p{L}\s]+$/u, {
     message: 'por favor, insira apenas letras e espaços',
   })
-  NomePet: string;
-  @Matches(/^[\p{L}\s]+$/u, {
-    message: 'por favor, insira apenas letras e espaços',
-  })
-  raca: string;
+  raca?: string;
 }

@@ -1,5 +1,15 @@
+# Projeto CRUD Faculdade
 
----
+API RESTful desenvolvida com NestJS e Prisma para gerenciamento de usuários, pets e produtos.
+
+## Tecnologias Utilizadas
+
+- NestJS
+- Prisma ORM
+- MySQL
+- TypeScript
+- Class Validator
+- Postman (para testes)
 
 ## Instruções de Instalação
 
@@ -46,3 +56,7 @@
    ```bash
    npm run start:dev
    ```
+
+## Testes
+
+Para testar a API, importe a coleção do Postman localizada em `api krauser.postman_collection.json`. A coleção contém todos os endpoints disponíveis e exemplos de payloads para cada operação.

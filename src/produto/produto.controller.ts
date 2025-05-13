@@ -6,41 +6,51 @@ import {
   Patch,
   Param,
   Delete,
-  ParseIntPipe
+  NotFoundException
 } from '@nestjs/common';
 import { ProdutoService } from './produto.service';
 import { CreateProdutoDto } from './dto/create-produto.dto';
-import { PatchProdutoDto } from './dto/update-produto.dto';
+import { UpdateProdutoDto } from './dto/update-produto.dto';
+import { Produto } from 'generated/prisma';
 
-
-@Controller('produto')
+@Controller('produtos')
 export class ProdutoController {
   constructor(private readonly produtoService: ProdutoService) {}
 
   @Post()
-  create(@Body() { name, tipo, preco }: CreateProdutoDto) {
-    return this.produtoService.create ({ name, tipo, preco });
+  async criarProduto(@Body() dados: CreateProdutoDto): Promise<Produto> {
+    return this.produtoService.criarProduto(dados);
   }
 
   @Get()
-  async read() {
-    return this.produtoService.read();
+  async listarProdutos(): Promise<Produto[]> {
+    return this.produtoService.listarProdutos();
   }
+
   @Get(':id')
-  async readOne(@Param('id', ParseIntPipe) id: number) {
-    return this.produtoService.readOne(id);
+  async encontrarProduto(@Param('id') id: string): Promise<Produto> {
+    const produto = await this.produtoService.encontrarProduto(+id);
+    if (!produto) {
+      throw new NotFoundException('Produto não encontrado');
+    }
+    return produto;
+  }
+
+  @Get(':id/pet')
+  async encontrarPetProduto(@Param('id') id: string) {
+    return this.produtoService.encontrarPetProduto(+id);
   }
 
   @Patch(':id')
-  async update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() { name, tipo, preco }: PatchProdutoDto,
-  ) {
-    return this.produtoService.update(id, {name, tipo, preco }); ;
+  async atualizarProduto(
+    @Param('id') id: string,
+    @Body() dados: UpdateProdutoDto
+  ): Promise<Produto> {
+    return this.produtoService.atualizarProduto(+id, dados);
   }
 
   @Delete(':id')
-async delete(@Param('id', ParseIntPipe) id: number) {
-    return this.produtoService.delete(id);
+  async excluirProduto(@Param('id') id: string) {
+    return this.produtoService.excluirProduto(+id);
   }
 }

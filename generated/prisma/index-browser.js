@@ -117,25 +117,26 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.UsuarioScalarFieldEnum = {
+  id: 'id',
+  nome: 'nome',
+  email: 'email',
+  senha: 'senha'
+};
+
 exports.Prisma.PetScalarFieldEnum = {
   id: 'id',
-  DonoNome: 'DonoNome',
-  NomePet: 'NomePet',
-  raca: 'raca'
+  nome: 'nome',
+  raca: 'raca',
+  usuarioId: 'usuarioId'
 };
 
 exports.Prisma.ProdutoScalarFieldEnum = {
   id: 'id',
-  name: 'name',
+  nome: 'nome',
   tipo: 'tipo',
-  preco: 'preco'
-};
-
-exports.Prisma.UserScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  email: 'email',
-  password: 'password'
+  preco: 'preco',
+  petId: 'petId'
 };
 
 exports.Prisma.SortOrder = {
@@ -143,29 +144,27 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.petOrderByRelevanceFieldEnum = {
-  DonoNome: 'DonoNome',
-  NomePet: 'NomePet',
+exports.Prisma.UsuarioOrderByRelevanceFieldEnum = {
+  nome: 'nome',
+  email: 'email',
+  senha: 'senha'
+};
+
+exports.Prisma.PetOrderByRelevanceFieldEnum = {
+  nome: 'nome',
   raca: 'raca'
 };
 
-exports.Prisma.produtoOrderByRelevanceFieldEnum = {
-  name: 'name',
-  tipo: 'tipo',
-  preco: 'preco'
-};
-
-exports.Prisma.userOrderByRelevanceFieldEnum = {
-  name: 'name',
-  email: 'email',
-  password: 'password'
+exports.Prisma.ProdutoOrderByRelevanceFieldEnum = {
+  nome: 'nome',
+  tipo: 'tipo'
 };
 
 
 exports.Prisma.ModelName = {
-  pet: 'pet',
-  produto: 'produto',
-  user: 'user'
+  Usuario: 'Usuario',
+  Pet: 'Pet',
+  Produto: 'Produto'
 };
 
 /**

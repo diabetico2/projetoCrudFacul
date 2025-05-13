@@ -1,16 +1,16 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateProdutoDto } from './create-produto.dto';
-import { IsAlpha, IsNumberString, Matches } from 'class-validator';
+import { IsNumber, IsOptional, IsString, Min } from 'class-validator';
 
-export class PatchProdutoDto extends PartialType(CreateProdutoDto) {
-  @Matches(/^[0-9.,:\$]+$/)
-  preco;
-  @Matches(/^[\p{L}\s]+$/u, {
-    message: 'por favor, insira apenas letras e espaços',
-  })
-  name: string;
-  @Matches(/^[\p{L}\s]+$/u, {
-    message: 'por favor, insira apenas letras e espaços',
-  })
-  tipo: string;
+export class UpdateProdutoDto {
+    @IsOptional()
+    @IsString()
+    nome?: string;
+
+    @IsOptional()
+    @IsString()
+    tipo?: string;
+
+    @IsOptional()
+    @IsNumber()
+    @Min(0)
+    preco?: number;
 }
