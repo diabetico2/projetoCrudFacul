@@ -57,6 +57,23 @@ API RESTful desenvolvida com NestJS e Prisma para gerenciamento de usuários, pe
    npm run start:dev
    ```
 
-## Testes
+1.2 **Testes Automatizados da API**
 
-Para testar a API, importe a coleção do Postman localizada em `api krauser.postman_collection.json`. A coleção contém todos os endpoints disponíveis e exemplos de payloads para cada operação.
+## Instalação
+
+```bash
+npm install
+npm install cypress --save-dev
+```
+
+## Como rodar os testes
+
+1. Inicie a API localmente na porta 3000.
+2. Para rodar os testes com interface gráfica:
+   ```bash
+   npx cypress open
+   ```
+3. Para rodar os testes no terminal:
+   ```bash
+   npx cypress run
+   ```
