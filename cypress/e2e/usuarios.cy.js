@@ -1,7 +1,6 @@
 describe('API de Usuários', () => {
   let userId;
 
-  // Teste de criação de usuário
   it('deve criar um novo usuário com sucesso', () => {
     const novoUsuario = {
       nome: 'Teste Usuario',
@@ -19,7 +18,6 @@ describe('API de Usuários', () => {
       });
   });
 
-  // Teste de erro ao criar usuário com dados inválidos
   it('deve retornar erro ao criar usuário com dados inválidos', () => {
     const usuarioInvalido = {
       nome: '',
@@ -37,7 +35,6 @@ describe('API de Usuários', () => {
     });
   });
 
-  // Teste de listagem de usuários
   it('deve listar todos os usuários', () => {
     cy.request('GET', '/usuarios')
       .then((response) => {
@@ -47,7 +44,6 @@ describe('API de Usuários', () => {
       });
   });
 
-  // Teste de busca de usuário por ID
   it('deve encontrar um usuário específico por ID', () => {
     cy.request('GET', `/usuarios/${userId}`)
       .then((response) => {
@@ -56,7 +52,6 @@ describe('API de Usuários', () => {
       });
   });
 
-  // Teste de erro ao buscar usuário inexistente
   it('deve retornar erro ao buscar usuário inexistente', () => {
     cy.request({
       method: 'GET',
@@ -67,7 +62,6 @@ describe('API de Usuários', () => {
     });
   });
 
-  // Teste de atualização de usuário
   it('deve atualizar um usuário existente', () => {
     const dadosAtualizacao = {
       nome: 'Nome Atualizado',
@@ -82,7 +76,6 @@ describe('API de Usuários', () => {
       });
   });
 
-  // Teste de exclusão de usuário
   it('deve excluir um usuário existente', () => {
     cy.request('DELETE', `/usuarios/${userId}`)
       .then((response) => {

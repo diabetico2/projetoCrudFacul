@@ -16,7 +16,7 @@ describe('API de Produtos', () => {
           usuarioId = response.body.id;
           const novoPet = {
             nome: 'Pet Teste',
-            raca: 'Vira Lata', // sem hífen
+            raca: 'Vira Lata',
             usuarioId: usuarioId
           };
           return cy.request('POST', '/pets', novoPet);
