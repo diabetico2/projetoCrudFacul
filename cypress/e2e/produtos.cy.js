@@ -4,26 +4,25 @@ describe('API de Produtos', () => {
     let usuarioId;
   
     before(() => {
+      const timestamp = Date.now();
       const novoUsuario = {
-        nome: 'Cliente Teste',
-        email: 'cliente@email.com',
+        nome: `Cliente Teste ${timestamp}`,
+        email: `cliente+${timestamp}@email.com`,
         senha: 'senha123'
       };
     
       cy.request('POST', '/usuarios', novoUsuario)
         .then((response) => {
           usuarioId = response.body.id;
-          cy.log('Usuário criado:', usuarioId);
           const novoPet = {
             nome: 'Pet Teste',
-            raca: 'Vira-lata',
+            raca: 'Vira Lata', // sem hífen
             usuarioId: usuarioId
           };
           return cy.request('POST', '/pets', novoPet);
         })
         .then((response) => {
           petId = response.body.id;
-          cy.log('Pet criado:', petId);
         });
     });
   
@@ -112,9 +111,15 @@ describe('API de Produtos', () => {
     });
   
     after(() => {
-      cy.request('DELETE', `/pets/${petId}`)
-        .then(() => {
-          cy.request('DELETE', `/usuarios/${usuarioId}`);
-        });
+      if (petId) {
+        cy.request('DELETE', `/pets/${petId}`)
+          .then(() => {
+            if (usuarioId) {
+              cy.request('DELETE', `/usuarios/${usuarioId}`);
+            }
+          });
+      } else if (usuarioId) {
+        cy.request('DELETE', `/usuarios/${usuarioId}`);
+      }
     });
   });
